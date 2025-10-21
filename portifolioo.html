@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najeeb Barkhad | Computer Science Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Light background */
+            color: #1f2937; /* Dark text */
+        }
+        .section-header {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 100%;
+            height: 4px;
+            background-color: #0d9488; /* Teal accent color */
+            border-radius: 9999px;
+        }
+        .project-card:hover .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="#hero" class="text-2xl font-bold text-gray-800 hover:text-teal-600 transition duration-300">
+                Najeeb Barkhad
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-teal-600 font-medium transition duration-300">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-teal-600 font-medium transition duration-300">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-teal-600 font-medium transition duration-300">Experience</a>
+                <a href="#skills" class="text-gray-600 hover:text-teal-600 font-medium transition duration-300">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-teal-600 font-medium transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300">About</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300">Projects</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300">Experience</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300">Skills</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        
+        <!-- 1. Hero Section -->
+        <section id="hero" class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Profile Picture Placeholder -->
+                <img src="https://placehold.co/150x150/d1d5db/374151?text=NB"
+                     onerror="this.onerror=null; this.src='https://placehold.co/150x150/d1d5db/374151?text=NB'"
+                     alt="Profile Picture" 
+                     class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-teal-500 shadow-xl">
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    Hello, I'm <span class="text-teal-600">Najeeb Barkhad</span>
+                </h1>
+                
+                <p class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+                    AI & Automation Developer | Computer Science Student
+                </p>
+                
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 font-light max-w-3xl mx-auto">
+                    I create intelligent automation systems that save time, streamline operations, and enhance productivity using AI, Python, and tools like n8n and OpenAI.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#projects" class="inline-block px-8 py-3 bg-teal-600 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-teal-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="inline-block px-8 py-3 bg-white text-teal-600 text-lg font-semibold rounded-full shadow-lg border-2 border-teal-600 hover:bg-teal-50 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        Contact Me
+                    </a>
+                    <a href="mailto:na2307172@qu.edu.qa" class="inline-block px-8 py-3 bg-gray-800 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-gray-900 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Email Me
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+            <h2 class="section-header text-gray-800 mb-12 text-center mx-auto">About Me</h2>
+
+            <div class="max-w-4xl mx-auto space-y-6 text-lg text-gray-700">
+                <p class="text-xl leading-relaxed">
+                    I'm a <strong>Computer Science student at Qatar University</strong> with a passion for <strong>AI research, machine learning, and intelligent automation</strong>. I specialize in building systems that solve real-world problems using cutting-edge AI techniques.
+                </p>
+                <p class="leading-relaxed">
+                    My journey in AI began with software engineering fundamentals, but I quickly dove deep into <strong>advanced machine learning research</strong>. Currently, I'm conducting research on <strong>Federated Learning and Reinforcement Learning</strong>, exploring how these techniques can optimize distributed AI systems. I've co-authored a conference paper on applying Federated Learning to fish disease detection and am pioneering the use of <strong>Reinforcement Learning for hyperparameter optimization</strong> in FL models.
+                </p>
+                <p class="leading-relaxed">
+                    Beyond research, I apply AI practically by developing <strong>workflow automation systems</strong> using n8n, Python, and OpenAI APIs. From setting up AI-driven IoT aquaponics systems to building intelligent business automation tools, I bridge the gap between theoretical research and practical implementation.
+                </p>
+                <p class="leading-relaxed">
+                    Currently focused on: <strong>Federated Learning, Reinforcement Learning, AI automation, and full-stack ML projects</strong>. I'm expanding my expertise in distributed AI systems, optimization algorithms, and production-ready ML deployment.
+                </p>
+                <p class="text-lg font-semibold text-teal-600 mt-8">
+                    💡 What drives me: Advancing AI research while creating technology that empowers people and solves meaningful problems.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Projects Section -->
+        <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-100">
+            <div class="text-center mb-12">
+                <h2 class="section-header text-gray-800 inline-block">Featured Projects</h2>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Showcasing my work in AI, automation, and full-stack development
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1: AI-Based Aquaponics System Development -->
+                <div class="project-card relative overflow-hidden rounded-lg shadow-xl bg-gray-50 transition duration-500 hover:shadow-2xl group">
+                    <img src="https://placehold.co/600x400/0d9488/ffffff?text=AI+Aquaponics+System" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=AI+Aquaponics+System'"
+                         alt="AI Aquaponics System" class="w-full h-48 object-cover transition duration-500 group-hover:scale-105">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">AI-Based Aquaponics System</h3>
+                        <p class="text-gray-600 mb-3 text-sm leading-relaxed">
+                            <strong>Problem:</strong> Early detection of fish diseases in aquaponics systems to prevent crop failure.<br>
+                            <strong>Solution:</strong> Developed an AI system using federated learning for distributed fish disease detection with privacy preservation. Optimized parameters using reinforcement learning to improve accuracy.
+                        </p>
+                        <div class="mb-3">
+                            <p class="text-xs font-semibold text-gray-700 mb-2">Tech Stack:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-800">Federated Learning</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-800">Python</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-purple-100 text-purple-800">Machine Learning</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-100 text-gray-800">IoT Sensors</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold flex items-center text-sm">
+                                View Details
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: College Course and Registration System -->
+                <div class="project-card relative overflow-hidden rounded-lg shadow-xl bg-gray-50 transition duration-500 hover:shadow-2xl group">
+                    <img src="https://placehold.co/600x400/4c1d95/ffffff?text=Course+Registration+System" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/4c1d95/ffffff?text=Course+Registration+System'"
+                         alt="Course Registration System" class="w-full h-48 object-cover transition duration-500 group-hover:scale-105">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Course Registration System</h3>
+                        <p class="text-gray-600 mb-3 text-sm leading-relaxed">
+                            <strong>Problem:</strong> Streamlining student course registration with better filtering and tracking.<br>
+                            <strong>Solution:</strong> Built a full-stack platform with user authentication, advanced course filtering, and academic tracking. Designed a normalized database schema and implemented secure login/session management.
+                        </p>
+                        <div class="mb-3">
+                            <p class="text-xs font-semibold text-gray-700 mb-2">Tech Stack:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-red-100 text-red-800">Java</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-yellow-100 text-yellow-800">SQL</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-blue-100 text-blue-800">JDBC</span>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-gray-100 text-gray-800">OOP Design</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/najeeb101" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:text-teal-800 font-semibold flex items-center text-sm">
+                                GitHub
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: AI Automation Internship (Oct 2025 - Present) -->
+                <div class="project-card relative overflow-hidden rounded-lg shadow-xl bg-gray-50 transition duration-500 hover:shadow-2xl group">
+                    <img src="https://placehold.co/600x400/4f46e5/ffffff?text=AI+Automation+System" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/4f46e5/ffffff?text=AI+Automation+System'"
+                         alt="AI Automation System" class="w-full h-48 object-cover transition duration-500 group-hover:scale-105">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">AI Workflow Automation System</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Developed AI-driven automation systems to enhance team productivity. Designed workflows using <strong>n8n, Python, and JavaScript</strong> and implemented smart data pipelines.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800">Python</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800">n8n / JavaScript</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-800">OpenAI API</span>
+                        </div>
+                        <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold flex items-center">
+                            View Case Study 
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Experience Section -->
+        <section id="experience" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+            <h2 class="section-header text-gray-800 mb-12 text-center mx-auto">Experience</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <!-- Experience 1: Research Intern - Aquaponics -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-teal-500">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Research Intern</h3>
+                            <p class="text-teal-600 font-semibold">AI-Based Aquaponics System Development | Qatar University</p>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-600 mt-2 md:mt-0">Aug 2025 – Present</p>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 ml-2">
+                        <li>Co-authored a conference paper on applying Federated Learning for fish disease detection, presented in Sydney (June 2025)</li>
+                        <li>Pioneered research using Reinforcement Learning for hyperparameter optimization to enhance Federated Learning model performance</li>
+                        <li>Developed prototype AI models using public datasets and conducted feasibility studies to minimize deployment risks</li>
+                        <li>Directed the setup of an AI-driven aquaponics greenhouse, integrating IoT sensors, pumps, and filters for Nile Tilapia and Lettuce cultivation</li>
+                        <li>Coordinated cross-institutional collaboration with international university partners on strategic project planning</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2: AI Automation Intern -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-blue-500">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">AI Automation Intern</h3>
+                            <p class="text-blue-600 font-semibold">Silatha (Remote)</p>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-600 mt-2 md:mt-0">Oct 2024 – Present</p>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 ml-2">
+                        <li>Developed AI-driven automation systems using n8n, Python, and OpenAI API to streamline business workflows</li>
+                        <li>Built intelligent workflow automations that improved team productivity by reducing manual tasks</li>
+                        <li>Integrated multiple APIs and data sources to create seamless automation pipelines</li>
+                        <li>Collaborated with cross-functional teams to identify automation opportunities and implement solutions</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Skills Section -->
+        <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-100">
+            <h2 class="section-header text-gray-800 mb-12 text-center mx-auto">Skills & Technologies</h2>
+            
+            <div class="max-w-5xl mx-auto">
+                
+                <!-- Languages -->
+                <div class="mb-10">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 text-center md:text-left">Languages</h3>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Python</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">JavaScript</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Java</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Tools -->
+                <div class="mb-10">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 text-center md:text-left">Frameworks & Tools</h3>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">n8n</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Node.js</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Flask</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">OpenAI API</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Git</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Specializations -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 text-center md:text-left">Specializations</h3>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">AI & Automation</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Machine Learning</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Data Pipelines</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Web Scraping</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Database Design</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-md font-semibold text-gray-700 hover:shadow-lg transition duration-300">Workflow Automation</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Old skills grid (hidden but keeping for reference) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center hidden">
+                
+                <!-- Skill Card: Python / JS -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-orange-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <p class="font-semibold text-gray-700">Python / JavaScript</p>
+                </div>
+
+                <!-- Skill Card: Java / OOP -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-yellow-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"></path></svg>
+                    <p class="font-semibold text-gray-700">Java / OOP</p>
+                </div>
+
+                <!-- Skill Card: AI & Automation -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-blue-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <p class="font-semibold text-gray-700">AI & Automation (n8n, OpenAI)</p>
+                </div>
+
+                <!-- Skill Card: SQL & Database Design -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-green-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V8a2 2 0 012-2h14a2 2 0 012 2v4M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4M12 18h.01"></path></svg>
+                    <p class="font-semibold text-gray-700">SQL & Database Design</p>
+                </div>
+
+                <!-- Skill Card: AI/ML Techniques -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-pink-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <p class="font-semibold text-gray-700">Federated & Reinforcement Learning</p>
+                </div>
+                
+                <!-- Skill Card: Development Tools -->
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-indigo-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10m0 0h8m-8 0L9 4m4 4v11m0 0h8m-8 0l3 3m-3-3l-3 3"></path></svg>
+                    <p class="font-semibold text-gray-700">Git / GitHub / VS Code</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Leadership & Activities Section -->
+        <section id="leadership" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+            <h2 class="section-header text-gray-800 mb-12 text-center mx-auto">Leadership & Activities</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <!-- Activity 1: Company Registration Team Lead -->
+                <div class="flex flex-col md:flex-row bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="md:w-1/4 mb-4 md:mb-0">
+                        <p class="text-sm font-semibold text-teal-600">Oct 2024 – Nov 2024</p>
+                        <p class="text-xs text-gray-500">Doha, Qatar</p>
+                    </div>
+                    <div class="md:w-3/4 md:pl-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Team Lead, Company Registration System</h3>
+                        <p class="text-gray-700 mb-3 leading-relaxed">
+                            Directed a group of Java developers in creating a scalable application to manage event attendees and company registrations.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                            <li>Oversaw system design, modular coding tasks, team collaboration, and final presentation delivery</li>
+                            <li>Focused on user experience by incorporating intuitive interfaces and real-time input validation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Activity 2: Shipment Handling Team Lead -->
+                <div class="flex flex-col md:flex-row bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="md:w-1/4 mb-4 md:mb-0">
+                        <p class="text-sm font-semibold text-teal-600">Apr 2024 – May 2024</p>
+                        <p class="text-xs text-gray-500">Doha, Qatar</p>
+                    </div>
+                    <div class="md:w-3/4 md:pl-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Team Lead, Shipment Handling Software</h3>
+                        <p class="text-gray-700 mb-3 leading-relaxed">
+                            Led the development of an order tracking and dispatch optimization tool using Java and custom algorithms.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                            <li>Implemented logic to prioritize shipments, calculate route efficiencies, and auto-generate delivery sheets</li>
+                            <li>Maintained documentation and testing logs to ensure software reliability and scalability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Activity 3: AI Organization Events Member -->
+                <div class="flex flex-col md:flex-row bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="md:w-1/4 mb-4 md:mb-0">
+                        <p class="text-sm font-semibold text-teal-600">Apr 2024 – Present</p>
+                        <p class="text-xs text-gray-500">Qatar University</p>
+                    </div>
+                    <div class="md:w-3/4 md:pl-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Events Member, Artificial Intelligence Organization</h3>
+                        <p class="text-gray-700 mb-3 leading-relaxed">
+                            Assisted in coordinating and executing campus-wide initiatives such as AI Week and the Innovation Program.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                            <li>Enhanced visibility and engagement with AI research among the student body</li>
+                            <li>Contributed to the setup and technical support of demo stations for hands-on experiences</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+            <h2 class="section-header text-gray-800 mb-12 text-center mx-auto">Get In Touch</h2>
+            
+            <div class="max-w-2xl mx-auto space-y-6">
+                <p class="text-xl text-gray-600 text-center">
+                    Have a project in mind or just want to say hi? Send me a message!
+                </p>
+
+                <!-- Contact Form (Basic structure, no backend functionality here) -->
+                <form class="space-y-4 p-8 bg-white rounded-xl shadow-2xl border border-gray-100">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-4 py-2 bg-teal-600 text-white font-semibold rounded-md shadow-md hover:bg-teal-700 transition duration-300 transform hover:scale-[1.01]">
+                        Send Message
+                    </button>
+                    <!-- Note: For a real site, you'd need a backend service (like Netlify Forms, Formspree, or a custom API) to handle submissions. -->
+                </form>
+                <!-- Social Links -->
+                <!-- Quick Links -->
+                <div class="text-center mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Connect With Me</h3>
+                </div>
+
+                <div class="flex justify-center space-x-6 pt-4">
+                    <a href="mailto:na2307172@qu.edu.qa" class="text-gray-500 hover:text-teal-600 transition duration-300" aria-label="Email">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/najeeb-abdi-78a9aa285/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-600 transition duration-300" aria-label="LinkedIn Profile">
+                        <!-- LinkedIn Icon (Inline SVG for simplicity) -->
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4.172-3.235-4.172 0v5.604h-3v-11h3v1.765c1.396-2.586 7.172-2.316 7.172 3.235v6.002z"/></svg>
+                    </a>
+                    <a href="https://github.com/najeeb101" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-600 transition duration-300" aria-label="GitHub Profile">
+                        <!-- GitHub Icon -->
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="text-center mt-6 space-y-2">
+                    <p class="text-gray-600">
+                        <strong>Email:</strong> <a href="mailto:na2307172@qu.edu.qa" class="text-teal-600 hover:text-teal-800 font-semibold">na2307172@qu.edu.qa</a>
+                    </p>
+                    <p class="text-gray-600">
+                        <strong>Location:</strong> Doha, Qatar
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Najeeb Barkhad. All rights reserved.</p>
+            <p class="mt-1 text-gray-400">Built with HTML & Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Footer Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 3. Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
