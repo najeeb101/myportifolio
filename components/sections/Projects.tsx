@@ -6,7 +6,7 @@ import { featuredProject, projects } from "@/data/projects";
 export function Projects() {
   return (
     <MotionSection id="projects">
-      <SectionHeader eyebrow="// projects" title="Selected work and build ideas." />
+      <SectionHeader eyebrow="// projects" title="Selected work with practical outcomes." />
       <ProjectCard project={featuredProject} featured />
       <div className="project-grid">
         {projects.map((project) => (

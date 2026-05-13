@@ -1,8 +1,17 @@
-import type { ExperienceItem } from "@/data/experience";
+"use client";
 
-export function TimelineItem({ item }: { item: ExperienceItem }) {
+import type { ExperienceItem } from "@/data/experience";
+import { motion } from "framer-motion";
+
+export function TimelineItem({ item, index = 0 }: { item: ExperienceItem; index?: number }) {
   return (
-    <article className="timeline-item">
+    <motion.article 
+      className="timeline-item"
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
       <div className="timeline-dot" />
       <div>
         <div className="timeline-meta">
@@ -24,6 +33,6 @@ export function TimelineItem({ item }: { item: ExperienceItem }) {
           ))}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

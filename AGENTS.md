@@ -2,48 +2,52 @@
 
 ## Project Structure & Module Organization
 
-This repository contains a static personal portfolio site. The site lives in `Portifolio website/`.
+This repository contains a Next.js personal portfolio site for Najeeb Barkhad.
 
-- `Portifolio website/index.html` is the primary page served to users.
-- `Portifolio website/src/styles/main.css` contains global styles, layout rules, responsive behavior, and theme variables.
-- `Portifolio website/src/scripts/main.js` contains browser-side interactions such as smooth scrolling and header state changes.
-- `Portifolio website/src/index/index.html` appears to be an alternate or legacy HTML entry.
+- `app/page.tsx` composes the homepage sections.
+- `app/layout.tsx` defines metadata and the root providers.
+- `app/globals.css` contains global styles, theme variables, responsive layout rules, and component styling.
+- `components/layout/` contains shared layout pieces such as `Navbar` and `Footer`.
+- `components/sections/` contains homepage sections such as `Hero`, `About`, `Experience`, `Projects`, `Skills`, `Gallery`, `Education`, and `Contact`.
+- `components/ui/` contains reusable UI helpers such as cards, brand icons, theme toggle, scroll progress, and back-to-top controls.
+- `data/` contains structured portfolio content for profile, projects, experience, education, and skills.
+- `public/` contains public assets, including media and the resume PDF.
 
-Place new CSS in `src/styles/`, JavaScript in `src/scripts/`, and local assets in `src/assets/` if assets are added later.
+Place new React components in the closest matching `components/` folder, content data in `data/`, and public assets in `public/`.
 
 ## Build, Test, and Development Commands
 
-There is no package manager or build pipeline configured. Run the site directly as static files.
+Use the configured npm scripts:
 
-- `cd "Portifolio website"`: move into the web root.
-- `python -m http.server 8000`: serve the site locally at `http://localhost:8000`.
-- Open `Portifolio website/index.html` in a browser for a quick static preview.
+- `npm run dev`: start the local Next.js development server.
+- `npm run build`: create a production build.
+- `npm run start`: serve the production build.
+- `npm run typecheck`: run TypeScript validation with `tsc --noEmit`.
 
-After changes, check desktop and mobile widths because the navigation and sections rely on responsive CSS.
+After visual changes, check desktop and mobile widths because the navigation, hero, project grid, gallery, and contact section rely on responsive CSS.
 
 ## Coding Style & Naming Conventions
 
-Use 4-space indentation for HTML, CSS, and JavaScript. Keep class names descriptive and kebab-case, such as `hero-content`, `section-title`, and `floating-icon`. Prefer CSS custom properties in `:root` for reusable colors, spacing, and layout constants.
+Use TypeScript and React function components. Keep component names in PascalCase, such as `ProjectCard` and `ThemeToggle`. Keep CSS class names descriptive and kebab-case, such as `hero-content`, `section-title`, and `project-metric`.
 
-Keep JavaScript plain and dependency-light. Wrap DOM setup in `DOMContentLoaded` before binding events.
+Prefer CSS custom properties in `:root` for reusable colors, spacing, and layout constants. Keep JavaScript dependency-light and avoid introducing new packages unless they clearly simplify the implementation.
 
 ## Testing Guidelines
 
-No automated test framework is configured. Validate changes manually by serving the site and checking:
+No dedicated automated test framework is configured. Validate changes with:
 
-- Navigation links scroll to the correct sections.
-- Contact form behavior still works.
-- Header scroll styling still toggles.
-- Layout remains usable at mobile, tablet, and desktop widths.
+- `npm run typecheck`
+- `npm run build`
+- Manual browser checks for navigation, theme toggle, project cards, contact links, resume link, and mobile layout.
 
 If tests are introduced later, document the framework and add a command such as `npm test`.
 
 ## Commit & Pull Request Guidelines
 
-The current history uses short, informal commit messages. For future work, use concise imperative messages, such as `Update portfolio hero layout` or `Fix contact form handling`.
+Use concise imperative commit messages, such as `Update portfolio hero layout` or `Improve contact CTA`.
 
 Pull requests should include a brief summary, screenshots for visual changes, manual testing notes, and related issue links when available. Keep changes scoped to one feature or fix.
 
 ## Security & Configuration Tips
 
-Avoid committing secrets, API keys, or private contact data. External CDN links for fonts, icons, and animations load from `index.html`; review them before adding more third-party scripts.
+Avoid committing secrets, API keys, or private contact data. Keep external font and media references intentional, and review any third-party scripts before adding them.

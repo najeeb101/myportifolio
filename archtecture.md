@@ -1,4 +1,4 @@
-# Najeeb A. Barkhad — Portfolio Redesign Plan
+# Najeeb Barkhad — Portfolio Redesign Plan
 
 ---
 
@@ -59,7 +59,7 @@ Light mode: inverts to a clean off-white `#F9FAFB` bg with near-black text, acce
 Stolen from: `aaabadcode` structure + `parthh.in` typography boldness
 
 - **Badge:** `● Open to opportunities` (pulsing green dot)
-- **Name:** `Najeeb A. Barkhad` — oversized, Syne 800
+- **Name:** `Najeeb Barkhad` — oversized, Syne 800
 - **Tagline:** `AI Engineer & Builder` (typed effect cycling through: *AI Engineer / ML Systems / Full-Stack Builder*)
 - **Sub-copy:** One line — *"Building AI systems that ship — from automation pipelines to production apps."*
 - **CTAs:** `View Projects ↓` + `Download Resume`
@@ -250,7 +250,7 @@ najeeb-portfolio/
 | TypeScript | Type safety |
 | Tailwind CSS v4 | Styling |
 | Framer Motion | Animations |
-| `next-themes` | Dark/light toggle |
+| Local `ThemeProvider` | Dark/light toggle |
 | `@fontsource` or Google Fonts | Syne + DM Sans + JetBrains Mono |
 | Vercel | Deployment |
 
@@ -278,7 +278,7 @@ From studying comparable portfolios, these are the most common mistakes:
 
 ## 7. Implementation Order
 
-1. **Scaffold** — Next.js + TS + Tailwind + Framer Motion + next-themes
+1. **Scaffold** — Next.js + TS + Tailwind + Framer Motion + local theme provider
 2. **Global styles** — CSS variables, fonts, scrollbar, base layout
 3. **Layout** — Navbar + Footer
 4. **Hero** — Name, typed text, photo, CTAs, animated bg

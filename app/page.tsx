@@ -6,6 +6,7 @@ import { Education } from "@/components/sections/Education";
 import { Experience } from "@/components/sections/Experience";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
+import { Gallery } from "@/components/sections/Gallery";
 import { Skills } from "@/components/sections/Skills";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Skills />
+        <Gallery />
         <Education />
         <Contact />
       </main>

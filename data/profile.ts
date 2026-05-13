@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Najeeb A. Barkhad",
+  name: "Najeeb Barkhad",
   shortTitle: "AI Eng | CS Major",
   seoTitle: "AI Engineering & Computer Science",
   location: "Doha, Qatar",
@@ -9,8 +9,8 @@ export const profile = {
 };
 
 export const socials = {
-  github: "#",
-  linkedin: "#",
+  github: "https://github.com/najeeb101",
+  linkedin: "https://www.linkedin.com/in/najeeb-abdi/",
   email: profile.email,
 };
 

@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowDown, Download, GitBranch, Mail, MapPin, Network, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowDown, Download, FileText, MapPin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { profile, socials, stats } from "@/data/profile";
+import { profile, stats } from "@/data/profile";
 
 const words = ["AI systems", "automation", "usable products"];
 
@@ -47,23 +48,13 @@ export function Hero() {
               View Projects
               <ArrowDown size={18} />
             </a>
-            <a className="button button--secondary" href="#" aria-disabled="true">
+            <a className="button button--secondary" href="/resume/Najeeb Resume.pdf" target="_blank" rel="noreferrer">
+              View Resume
+              <FileText size={18} />
+            </a>
+            <a className="button button--secondary" href="/resume/Najeeb Resume.pdf" download>
               Download Resume
               <Download size={18} />
-            </a>
-          </div>
-          <div className="social-row" aria-label="Social links">
-            <a href={socials.github}>
-              <GitBranch size={20} />
-              GitHub
-            </a>
-            <a href={socials.linkedin}>
-              <Network size={20} />
-              LinkedIn
-            </a>
-            <a href={`mailto:${socials.email}`}>
-              <Mail size={20} />
-              Email
             </a>
           </div>
         </div>
@@ -74,11 +65,22 @@ export function Hero() {
           transition={{ delay: 0.18, duration: 0.7, ease: "easeOut" }}
         >
           <div className="hero-panel-glow" aria-hidden="true" />
-          <div className="portrait-placeholder" aria-label="Najeeb Barkhad monogram">
+          <motion.div 
+            className="portrait-placeholder" 
+            aria-label="Najeeb Barkhad portrait"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          >
+            <Image 
+              src="/media/IMG_7755.jpeg" 
+              alt="Najeeb Barkhad" 
+              fill 
+              style={{ objectFit: 'cover' }} 
+              priority
+            />
             <div className="orbit-ring orbit-ring--one" aria-hidden="true" />
             <div className="orbit-ring orbit-ring--two" aria-hidden="true" />
-            <span>NB</span>
-          </div>
+          </motion.div>
           <div className="location-line">
             <MapPin size={18} />
             {profile.location}

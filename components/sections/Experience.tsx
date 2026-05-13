@@ -8,8 +8,8 @@ export function Experience() {
     <MotionSection id="experience">
       <SectionHeader eyebrow="// experience" title="Where I have been applying the work." />
       <div className="timeline">
-        {experience.map((item) => (
-          <TimelineItem item={item} key={`${item.role}-${item.company}`} />
+        {experience.map((item, index) => (
+          <TimelineItem item={item} key={`${item.role}-${item.company}`} index={index} />
         ))}
       </div>
     </MotionSection>
