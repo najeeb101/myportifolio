@@ -19,10 +19,6 @@ export function Hero() {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="hero-copy">
-          <div className="status-pill">
-            <span />
-            Open to opportunities
-          </div>
           <p className="eyebrow">{profile.shortTitle}</p>
           <h1>
             {profile.name}
