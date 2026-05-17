@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GitHubLogo, LinkedInLogo } from "@/components/ui/BrandIcons";
@@ -48,6 +49,9 @@ export function Navbar() {
     <>
       <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
         <Link href="#home" className="brand" aria-label="Go to home">
+          <span className="brand-avatar" aria-hidden="true">
+            <Image src="/media/najeeb-bitmoji-upper.png" alt="" width={72} height={58} priority />
+          </span>
           <span>{profile.name}</span>
         </Link>
         <nav className="nav-links" aria-label="Primary navigation">

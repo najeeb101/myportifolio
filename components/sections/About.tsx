@@ -16,12 +16,12 @@ const aboutHighlights = [
   {
     icon: BrainCircuit,
     label: "Focus",
-    value: "Applied AI, automation, and useful product systems",
+    value: "AI engineering, frontend product work, and automation",
   },
   {
     icon: Rocket,
     label: "Building",
-    value: "RouteyAI and practical full-stack AI projects",
+    value: "RouteyAI and practical AI product systems",
   },
   {
     icon: MapPin,
@@ -33,13 +33,13 @@ const aboutHighlights = [
 export function About() {
   return (
     <MotionSection id="about">
-      <SectionHeader eyebrow="// about" title="Turning AI ideas into usable systems." />
+      <SectionHeader eyebrow="// about" title="Turning AI ideas into usable web products." />
       <div className="about-grid">
         <div className="prose-block">
           <p>
             I&apos;m Najeeb Barkhad, a computer science major at Qatar University focused on AI
-            engineering, automation, and full-stack product development. I like working on ideas
-            that can move from a rough problem into something people can actually use.
+            engineering, frontend development, and automation. I like working on ideas that can move
+            from a rough problem into something people can actually use.
           </p>
           <motion.div 
             className="about-photo"
@@ -56,13 +56,14 @@ export function About() {
           </p>
           <p>
             Right now I&apos;m especially interested in practical AI tools, transport and operations
-            software, and automation workflows that reduce repeated manual work.
+            software, data-driven products, and automation workflows that reduce repeated manual
+            work.
           </p>
           <div className="about-chip-row" aria-label="About focus areas">
             <span>AI Engineering</span>
             <span>Automation</span>
-            <span>Full-stack Products</span>
-            <span>Operations Tools</span>
+            <span>Frontend Products</span>
+            <span>Backend Integrations</span>
           </div>
         </div>
         <div className="about-panel" aria-label="Profile summary">

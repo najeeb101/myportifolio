@@ -40,6 +40,23 @@ export const featuredProject: Project = {
 
 export const projects: Project[] = [
   {
+    name: "Naja7 AI Contract Analyzer",
+    description:
+      "Web app for uploading contract documents, storing them in Supabase, and generating AI-powered summaries and key document insights.",
+    stack: ["React", "TypeScript", "Vite", "Supabase", "Tailwind CSS", "shadcn-ui", "Gemini"],
+    status: "Project",
+    year: "2025",
+    github: "#",
+    live: "#",
+    role: "Frontend development, Supabase integration, and AI document analysis workflow",
+    impact:
+      "Helps users upload contracts and quickly understand document content through summaries, stats, and AI-generated analysis.",
+    metrics: [
+      { value: "5MB", label: "max file size" },
+      { value: "6", label: "file types" },
+    ],
+  },
+  {
     name: "Silatha Word Search Game",
     description:
       "Interactive word search experience built for a fast, responsive browser-based learning flow with simple game mechanics.",
@@ -69,70 +86,6 @@ export const projects: Project[] = [
     metrics: [
       { value: "3", label: "app layers" },
       { value: "2025", label: "project year" },
-    ],
-  },
-  {
-    name: "AI Contract Analyzer",
-    description:
-      "AI assistant concept for reviewing contract text, surfacing risks, and summarizing key clauses.",
-    stack: ["Python", "OpenAI API", "Automation"],
-    status: "Project",
-    year: "2025",
-    github: "#",
-    live: "#",
-    role: "AI workflow design and Python automation",
-    impact: "Shows how LLMs can make dense legal text easier to scan, summarize, and review.",
-    metrics: [
-      { value: "3", label: "review outputs" },
-      { value: "2025", label: "project year" },
-    ],
-  },
-  {
-    name: "Library Loan Software",
-    description:
-      "Java application for managing book loans, users, and library workflows with structured logic.",
-    stack: ["Java", "GitHub Projects"],
-    status: "Coursework",
-    year: "2024",
-    github: "#",
-    live: "#",
-    role: "Java application logic",
-    impact: "Practiced object-oriented design through a practical lending workflow.",
-    metrics: [
-      { value: "3", label: "loan workflows" },
-      { value: "2024", label: "coursework year" },
-    ],
-  },
-  {
-    name: "Conference Review DB",
-    description:
-      "Database-backed review system for conference submissions, reviewers, and decision tracking.",
-    stack: ["Oracle SQL", "Java", "Database Design"],
-    status: "Coursework",
-    year: "2024",
-    github: "#",
-    live: "#",
-    role: "Schema design and query logic",
-    impact: "Modeled a real review workflow with structured relationships and database constraints.",
-    metrics: [
-      { value: "4", label: "core entities" },
-      { value: "2024", label: "coursework year" },
-    ],
-  },
-  {
-    name: "Event Management System",
-    description:
-      "Data-structure focused system for organizing event records, participants, and scheduling logic.",
-    stack: ["Java", "Data Structures"],
-    status: "Coursework",
-    year: "2024",
-    github: "#",
-    live: "#",
-    role: "Data structures and Java implementation",
-    impact: "Applied data-structure choices to organize and retrieve event information cleanly.",
-    metrics: [
-      { value: "3", label: "data flows" },
-      { value: "2024", label: "coursework year" },
     ],
   },
 ];

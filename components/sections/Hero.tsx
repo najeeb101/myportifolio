@@ -5,7 +5,7 @@ import { ArrowDown, Download, FileText, MapPin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { profile, stats } from "@/data/profile";
 
-const words = ["AI systems", "automation", "usable products"];
+const words = ["AI products", "backend integrations", "frontend systems"];
 
 export function Hero() {
   return (
@@ -26,11 +26,11 @@ export function Hero() {
           <p className="eyebrow">{profile.shortTitle}</p>
           <h1>
             {profile.name}
-            <span>builds practical AI.</span>
+            <span>builds AI-powered web products.</span>
           </h1>
           <p className="hero-subtitle">
-            I build AI systems, automation workflows, and full-stack products that make complex
-            ideas easier to use.
+            I build AI-powered web apps, backend integrations, and automation tools that turn
+            complex processes into usable products.
           </p>
           <div className="hero-word-row" aria-label="Focus areas">
             {words.map((word) => (

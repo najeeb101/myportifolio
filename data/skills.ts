@@ -4,6 +4,7 @@ export const skillGroups = [
     skills: [
       "TensorFlow",
       "OpenAI API",
+      "Gemini",
       "Federated Learning",
       "Reinforcement Learning",
       "n8n Automation",
@@ -20,16 +21,18 @@ export const skillGroups = [
       "TypeScript",
       "JavaScript",
       "HTML/CSS",
+      "Tailwind CSS",
+      "shadcn-ui",
       "Prisma ORM",
       "Supabase",
+      "Supabase Storage",
       "Firebase",
       "REST APIs",
       "PostgreSQL",
-      "Oracle SQL",
     ],
   },
   {
     title: "Languages & Tools",
-    skills: ["Python", "Java", "SQL", "Git", "GitHub", "VS Code", "Raspberry Pi", "Vite"],
+    skills: ["Python", "SQL", "Git", "GitHub", "VS Code", "Vite", "n8n"],
   },
 ];
