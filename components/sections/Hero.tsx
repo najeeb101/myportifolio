@@ -20,6 +20,12 @@ const rise = {
   hidden: { opacity: 0, y: 28 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
+// The name is the page's largest paint, so it is visible from the first frame
+// and only slides into place; fading it in held mobile LCP until hydration.
+const settle = {
+  hidden: { y: 28 },
+  show: { y: 0, transition: { duration: 0.7, ease } },
+};
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -57,7 +63,7 @@ export function Hero() {
           <motion.p className="hero-typed" variants={rise}>
             <Typewriter prefix="> currently " phrases={typedPhrases} />
           </motion.p>
-          <motion.h1 variants={rise}>
+          <motion.h1 variants={settle}>
             {profile.name}
             <span>builds AI-powered web products.</span>
           </motion.h1>
