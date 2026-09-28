@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, type MotionStyle } from "framer-motion";
 import { IsoGlyph } from "@/components/ui/IsoGlyph";
 import { TypeReveal } from "@/components/ui/TypeReveal";
@@ -24,6 +25,8 @@ export function ProjectTile({
   onSelect: (tile: HTMLButtonElement) => void;
 }) {
   const reduceMotion = useReducedMotion();
+  // One viewport observer per tile drives the glyph drop-in and the typing.
+  const [seen, setSeen] = useState(false);
   const rotateX = useSpring(useMotionValue(0), tilt);
   const rotateY = useSpring(useMotionValue(0), tilt);
 
@@ -55,6 +58,7 @@ export function ProjectTile({
       initial={{ opacity: 0, x: 60 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.2 }}
+      onViewportEnter={() => setSeen(true)}
       transition={{ duration: 0.6, delay: Math.min(number, 5) * 0.07, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -6 }}
       whileTap={{ scale: 0.98 }}
@@ -64,12 +68,12 @@ export function ProjectTile({
         {selected ? "Viewing" : "View"} {pad(number)}
       </span>
       <span className="project-tile-glyph">
-        <IsoGlyph glyph={project.glyph} accent={project.accent} size={112} />
+        <IsoGlyph glyph={project.glyph} accent={project.accent} size={112} play={seen} />
       </span>
       <span className="project-tile-title">{project.name}</span>
       <span className="project-tile-tagline">{project.tagline}</span>
       <span className="project-tile-description">
-        <TypeReveal text={project.description} />
+        <TypeReveal text={project.description} active={seen} />
       </span>
       <span className="project-tile-meta">
         <span>{project.category}</span>

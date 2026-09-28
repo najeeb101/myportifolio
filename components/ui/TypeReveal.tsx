@@ -1,17 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useState } from "react";
 
-// Types text out once it scrolls into view. The untyped remainder stays in the
-// layout (transparent) so the card height never jumps.
-export function TypeReveal({ text, speed = 14 }: { text: string; speed?: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.6 });
+const charsPerTick = 2;
+
+// Types text out once `active` turns true (the parent tile knows when it has
+// been seen). The untyped remainder stays in the layout (transparent) so the
+// card height never jumps.
+export function TypeReveal({ text, active, speed = 24 }: { text: string; active: boolean; speed?: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!active) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setCount(text.length);
       return;
@@ -22,14 +22,14 @@ export function TypeReveal({ text, speed = 14 }: { text: string; speed?: number 
           window.clearInterval(timer);
           return current;
         }
-        return current + 1;
+        return Math.min(current + charsPerTick, text.length);
       });
     }, speed);
     return () => window.clearInterval(timer);
-  }, [inView, text, speed]);
+  }, [active, text, speed]);
 
   return (
-    <span ref={ref} className="type-reveal">
+    <span className="type-reveal">
       <span className="sr-only">{text}</span>
       <span aria-hidden="true">{text.slice(0, count)}</span>
       {count < text.length && (

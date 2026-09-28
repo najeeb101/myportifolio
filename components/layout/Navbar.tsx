@@ -48,7 +48,7 @@ export function Navbar() {
   return (
     <>
       <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
-        <Link href="#home" className="brand" aria-label="Go to home">
+        <Link href="#home" className="brand" aria-label={`${profile.name}, back to top`}>
           <span className="brand-avatar" aria-hidden="true">
             <Image src="/media/najeeb-bitmoji-upper.png" alt="" width={72} height={58} priority />
           </span>

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { ProjectGlyph } from "@/data/projects";
 
 type Cube = [x: number, y: number, z: number];
@@ -66,16 +63,19 @@ function poly(points: [number, number][]) {
   return points.map(([px, py]) => `${px.toFixed(1)},${py.toFixed(1)}`).join(" ");
 }
 
+// Pure SVG + CSS: the drop-in (.iso-drop) and hover bob (.iso-cube) are CSS
+// animations, so dozens of looping tiles cost no per-cube JS or observers.
 export function IsoGlyph({
   glyph,
   accent,
   size = 120,
-  animateIn = true,
+  play = true,
 }: {
   glyph: ProjectGlyph;
   accent: string;
   size?: number;
-  animateIn?: boolean;
+  /** Cubes stay hidden until true, then drop in one after another. */
+  play?: boolean;
 }) {
   const cubes = [...shapes[glyph]].sort((a, b) => a[0] + a[1] + a[2] - (b[0] + b[1] + b[2]) || a[2] - b[2]);
 
@@ -97,6 +97,7 @@ export function IsoGlyph({
       width={size}
       height={(size * height) / width}
       aria-hidden="true"
+      data-play={play}
       style={{ "--glyph-accent": accent } as React.CSSProperties}
     >
       {cubes.map(([x, y, z], index) => {
@@ -105,19 +106,17 @@ export function IsoGlyph({
         const left = poly([project(x, y + 1, z), project(x + 1, y + 1, z), project(x + 1, y + 1, z + 1), project(x, y + 1, z + 1)]);
 
         return (
-          <motion.g
+          <g
             key={`${x}-${y}-${z}`}
-            className="iso-cube"
-            style={{ "--cube-delay": `${index * -0.35}s` } as React.CSSProperties}
-            initial={animateIn ? { opacity: 0, y: -18 } : false}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.045, type: "spring", stiffness: 260, damping: 18 }}
+            className="iso-drop"
+            style={{ "--drop-delay": `${index * 45}ms`, "--cube-delay": `${index * -0.35}s` } as React.CSSProperties}
           >
-            <polygon className="iso-top" points={top} />
-            <polygon className="iso-left" points={left} />
-            <polygon className="iso-right" points={right} />
-          </motion.g>
+            <g className="iso-cube">
+              <polygon className="iso-top" points={top} />
+              <polygon className="iso-left" points={left} />
+              <polygon className="iso-right" points={right} />
+            </g>
+          </g>
         );
       })}
     </svg>
