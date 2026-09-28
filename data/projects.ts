@@ -118,7 +118,7 @@ export const projects: Project[] = [
     status: "Research Tool",
     year: "2026",
     github: "https://github.com/najeeb101/Single-Cohort-Flow-Simulator",
-    live: "#",
+    live: "https://scfs-frontend.onrender.com",
     role: "Simulation model, Scenario Builder, Plan Builder, and dashboard workflow",
     impact:
       "Lets department leadership test curriculum and capacity scenarios, then see projected effects on student flow before committing to changes.",
