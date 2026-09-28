@@ -1,5 +1,10 @@
+export const projectCategories = ["AI Products", "Web Apps", "Games"] as const;
+
+export type ProjectCategory = (typeof projectCategories)[number];
+
 export type Project = {
   name: string;
+  category: ProjectCategory;
   description: string;
   stack: string[];
   status: string;
@@ -17,6 +22,7 @@ export type Project = {
 
 export const featuredProject: Project = {
   name: "RouteyAI",
+  category: "AI Products",
   description:
     "School transport intelligence platform concept for safer live tracking, smarter routing, and clearer operations across Qatar and the GCC.",
   stack: ["Next.js", "Supabase", "Mapbox", "TypeScript", "K-Means++"],
@@ -41,6 +47,7 @@ export const featuredProject: Project = {
 export const projects: Project[] = [
   {
     name: "Naja7 AI Contract Analyzer",
+    category: "AI Products",
     description:
       "Web app for uploading contract documents, storing them in Supabase, and generating AI-powered summaries and key document insights.",
     stack: ["React", "TypeScript", "Vite", "Supabase", "Tailwind CSS", "shadcn-ui", "Gemini"],
@@ -58,6 +65,7 @@ export const projects: Project[] = [
   },
   {
     name: "Silatha Word Search Game",
+    category: "Games",
     description:
       "Interactive word search experience built for a fast, responsive browser-based learning flow with simple game mechanics.",
     stack: ["React", "Vite", "Firebase"],
@@ -74,6 +82,7 @@ export const projects: Project[] = [
   },
   {
     name: "Social Media Platform",
+    category: "Web Apps",
     description:
       "Full-stack social application concept with user flows, data models, and modern web UI patterns.",
     stack: ["Next.js", "Prisma", "JavaScript"],

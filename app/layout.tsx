@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { SectionRail } from "@/components/ui/SectionRail";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const title = "Najeeb Barkhad | AI Engineering & Computer Science";
@@ -69,6 +70,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CustomCursor />
           <ScrollProgress />
+          <SectionRail />
           {children}
           <BackToTop />
         </ThemeProvider>
