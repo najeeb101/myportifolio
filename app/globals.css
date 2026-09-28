@@ -440,9 +440,12 @@ a {
   padding: 92px 0 36px;
 }
 
+/* Oversized by one grid cell so the drift can loop by moving the layer
+   (GPU-composited) instead of repainting background-position every frame. */
 .hero-bg {
   position: absolute;
-  inset: 0;
+  inset: -44px 0 0 -44px;
+  will-change: transform;
   background-image:
     linear-gradient(color-mix(in srgb, var(--border) 38%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, var(--border) 38%, transparent) 1px, transparent 1px);
@@ -641,7 +644,6 @@ h1 span {
   border-radius: 8px;
   background: color-mix(in srgb, var(--surface) 86%, transparent);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
 }
 
 .hero-panel {
@@ -848,7 +850,6 @@ h1 span {
     linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent), transparent 52%),
     color-mix(in srgb, var(--surface) 86%, transparent);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
 }
 
 .about-panel-header {
@@ -1088,7 +1089,6 @@ h1 span {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface) 85%, transparent);
-  backdrop-filter: blur(12px);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -1144,7 +1144,6 @@ h1 span {
   border-radius: 12px;
   padding: 24px;
   background: color-mix(in srgb, var(--surface) 80%, transparent);
-  backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
   transition: border-color 0.2s ease;
 }
@@ -1281,11 +1280,11 @@ h1 span {
 
 @keyframes grid-drift {
   from {
-    background-position: 0 0;
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    background-position: 44px 44px;
+    transform: translate3d(44px, 44px, 0);
   }
 }
 
@@ -1468,7 +1467,6 @@ h1 span {
   border: 1px solid var(--border);
   border-radius: 16px;
   background: color-mix(in srgb, var(--surface) 70%, transparent);
-  backdrop-filter: blur(12px);
   padding: clamp(32px, 5vw, 56px);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -2058,11 +2056,109 @@ h1 span {
   opacity: 0.6;
 }
 
+/* Horizontal project rail: endless loop, snap scrolling, mouse drag, fading edges */
 .project-palette {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  --rail-fade-start: 56px;
+  --rail-fade-end: 72px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* Room for the hover lift and glow, which the scroll box would otherwise clip. */
+  padding: 14px 4px 34px;
+  margin: -14px -4px 0;
+  cursor: grab;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--rail-fade-start), #000 calc(100% - var(--rail-fade-end)), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 var(--rail-fade-start), #000 calc(100% - var(--rail-fade-end)), transparent 100%);
+}
+
+.project-palette::-webkit-scrollbar {
+  display: none;
+}
+
+.project-track {
+  display: flex;
+  width: max-content;
   gap: 18px;
+}
+
+.project-palette--dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.project-palette--dragging .project-tile {
+  pointer-events: none;
+}
+
+.project-track > .project-tile {
+  flex: 0 0 clamp(270px, 25vw, 310px);
+  scroll-snap-align: start;
+}
+
+.project-rail-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 28px;
+}
+
+.project-rail-track {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  margin-right: 12px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.project-rail-counter {
+  min-width: 64px;
+  color: var(--muted-2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+}
+
+.project-rail-counter span {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* A thumb that slides across and wraps around, like the rail itself. */
+.project-rail-thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--tile-accent, var(--accent));
+  box-shadow: 0 0 12px var(--tile-accent, var(--accent));
+  transition: background 0.4s ease;
+}
+
+.project-rail-button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-rail-button:hover:not(:disabled) {
+  border-color: var(--text);
+  transform: scale(1.06);
+}
+
+.project-rail-button:disabled {
+  opacity: 0.35;
+  cursor: default;
 }
 
 .project-tile {
@@ -2071,6 +2167,7 @@ h1 span {
   min-width: 0;
   min-height: 430px;
   flex-direction: column;
+  transform-style: preserve-3d;
   padding: 22px;
   border: 1px solid var(--border);
   border-radius: 2px;
@@ -2094,6 +2191,29 @@ h1 span {
   content: "";
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+/* Cursor-following spotlight, positioned by ProjectTile via --spot-x / --spot-y. */
+.project-tile::before {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    380px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+    color-mix(in srgb, var(--tile-accent) 16%, transparent),
+    transparent 62%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.project-tile:hover::before {
+  opacity: 1;
+}
+
+.project-tile > * {
+  position: relative;
 }
 
 .project-tile:hover,
@@ -2141,6 +2261,7 @@ h1 span {
   font-size: 1.2rem;
   font-weight: 800;
   line-height: 1.15;
+  overflow-wrap: anywhere;
 }
 
 .project-tile-tagline {
@@ -2413,12 +2534,6 @@ h1 span {
   color: var(--muted-2);
 }
 
-@media (max-width: 1100px) {
-  .project-palette {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 920px) {
   .projects-intro,
   .project-detail {
@@ -2431,13 +2546,88 @@ h1 span {
 }
 
 @media (max-width: 560px) {
-  .project-palette {
-    grid-template-columns: 1fr;
+  /* Cards take most of the screen so the next one peeks in as a swipe hint. */
+  .project-track > .project-tile {
+    flex-basis: calc((100vw - 32px) * 0.84);
+    min-height: 400px;
   }
 
-  .project-tile {
-    min-height: 0;
+  .project-palette {
+    --rail-fade-start: 20px;
+    --rail-fade-end: 28px;
   }
+}
+
+/* Magnetic buttons: motion drives transform, so CSS must not ease it too. */
+.button.magnetic {
+  transition: border-color 0.2s ease, background 0.2s ease;
+  will-change: transform;
+}
+
+.button.magnetic:hover {
+  transform: none;
+}
+
+/* Tech marquee under the hero */
+.tech-marquee {
+  display: grid;
+  gap: 12px;
+  padding: 26px 0;
+  border-block: 1px solid var(--border);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+
+.tech-marquee-row--reverse .tech-marquee-track {
+  animation-direction: reverse;
+  animation-duration: 56s;
+}
+
+.tech-marquee:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Spacing lives on each item, not a flex gap, so the -50% loop lands seamlessly. */
+.tech-marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 12px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tech-marquee-track span::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  content: "";
+}
+
+.tech-marquee-row--reverse .tech-marquee-track span::before {
+  background: var(--accent-2);
+  box-shadow: 0 0 8px var(--accent-2);
+}
+
+.tech-marquee-track span:hover {
+  border-color: var(--accent);
+  color: var(--text);
 }
 
 .project-detail-anchor {

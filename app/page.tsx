@@ -8,6 +8,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { Gallery } from "@/components/sections/Gallery";
 import { Skills } from "@/components/sections/Skills";
+import { TechMarquee } from "@/components/ui/TechMarquee";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TechMarquee />
         <About />
         <Experience />
         <Projects />

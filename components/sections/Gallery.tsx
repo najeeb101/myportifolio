@@ -2,15 +2,18 @@
 
 import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
+// Real (EXIF-rotated) dimensions, so next/image reserves the right space and
+// serves resized WebP instead of the multi-megabyte originals.
 const photos = [
-  "/media/IMG_1772.jpeg",
-  "/media/IMG_1822.jpeg",
-  "/media/IMG_2550.jpeg",
-  "/media/IMG_3700.jpg",
-  "/media/IMG_5519.JPG",
-  "/media/IMG_6892.jpeg",
+  { src: "/media/IMG_1772.jpeg", width: 1699, height: 3020 },
+  { src: "/media/IMG_1822.jpeg", width: 2268, height: 2722 },
+  { src: "/media/IMG_2550.jpeg", width: 1900, height: 3121 },
+  { src: "/media/IMG_3700.jpg", width: 2208, height: 1242 },
+  { src: "/media/IMG_5519.JPG", width: 1242, height: 2208 },
+  { src: "/media/IMG_6892.jpeg", width: 3024, height: 4032 },
 ];
 
 const containerVariants = {
@@ -37,17 +40,20 @@ export function Gallery() {
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {photos.map((src, index) => (
+        {photos.map((photo, index) => (
           <motion.div
-            key={src}
+            key={photo.src}
             variants={itemVariants}
             whileHover={{ scale: 1.02, y: -5, rotate: index % 2 === 0 ? 1 : -1, zIndex: 10 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="relative overflow-hidden rounded-xl border border-[var(--border)] shadow-md hover:shadow-xl cursor-pointer break-inside-avoid"
           >
-            <img
-              src={src}
+            <Image
+              src={photo.src}
               alt={`Moment ${index + 1}`}
+              width={photo.width}
+              height={photo.height}
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />

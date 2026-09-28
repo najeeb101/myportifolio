@@ -1,8 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowDown, Download, FileText, MapPin, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { MagneticLink } from "@/components/ui/MagneticLink";
 import { Typewriter } from "@/components/ui/Typewriter";
 import { profile, stats } from "@/data/profile";
 
@@ -20,12 +22,35 @@ const rise = {
 };
 
 export function Hero() {
+  const reduceMotion = useReducedMotion();
+  const [wide, setWide] = useState(false);
+  const { scrollY } = useScroll();
+  // Copy and portrait drift apart as the hero scrolls away.
+  const copyY = useTransform(scrollY, [0, 700], [0, 110]);
+  const copyOpacity = useTransform(scrollY, [0, 520], [1, 0.25]);
+  const panelY = useTransform(scrollY, [0, 700], [0, -70]);
+
+  useEffect(() => {
+    // Parallax only on side-by-side layouts, where the columns cannot collide.
+    const query = window.matchMedia("(min-width: 921px)");
+    const update = () => setWide(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  const parallax = wide && !reduceMotion;
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-bg" aria-hidden="true" />
       <div className="hero-noise" aria-hidden="true" />
       <motion.div className="hero-grid" initial="hidden" animate="show" variants={stagger}>
-        <motion.div className="hero-copy" variants={stagger}>
+        <motion.div
+          className="hero-copy"
+          variants={stagger}
+          style={parallax ? { y: copyY, opacity: copyOpacity } : undefined}
+        >
           <motion.p className="eyebrow" variants={rise}>
             {profile.shortTitle}
           </motion.p>
@@ -52,22 +77,23 @@ export function Hero() {
             ))}
           </motion.div>
           <motion.div className="hero-actions" variants={rise}>
-            <a className="button button--primary" href="#projects">
+            <MagneticLink className="button button--primary" href="#projects">
               View Projects
               <ArrowDown size={18} />
-            </a>
-            <a className="button button--secondary" href="/resume/Najeeb Resume.pdf" target="_blank" rel="noreferrer">
+            </MagneticLink>
+            <MagneticLink className="button button--secondary" href="/resume/Najeeb Resume.pdf" target="_blank" rel="noreferrer">
               View Resume
               <FileText size={18} />
-            </a>
-            <a className="button button--secondary" href="/resume/Najeeb Resume.pdf" download>
+            </MagneticLink>
+            <MagneticLink className="button button--secondary" href="/resume/Najeeb Resume.pdf" download>
               Download Resume
               <Download size={18} />
-            </a>
+            </MagneticLink>
           </motion.div>
         </motion.div>
         <motion.div
           className="hero-panel"
+          style={parallax ? { y: panelY } : undefined}
           variants={{
             hidden: { opacity: 0, scale: 0.94, rotate: 1.5 },
             show: { opacity: 1, scale: 1, rotate: 0, transition: { delay: 0.3, duration: 0.8, ease } },
@@ -83,8 +109,9 @@ export function Hero() {
             <Image 
               src="/media/IMG_7755.jpeg" 
               alt="Najeeb A. Abdi"
-              fill 
-              style={{ objectFit: 'cover' }} 
+              fill
+              sizes="(max-width: 920px) 90vw, 480px"
+              style={{ objectFit: 'cover' }}
               priority
             />
             <div className="orbit-ring orbit-ring--one" aria-hidden="true" />

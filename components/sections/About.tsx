@@ -4,6 +4,7 @@ import Image from "next/image";
 import { BrainCircuit, Code2, GraduationCap, MapPin, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { profile } from "@/data/profile";
 
@@ -47,7 +48,13 @@ export function About() {
             whileHover={{ rotate: 1, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-             <Image src="/media/IMG_7554.jpeg" alt="Najeeb in action" fill style={{ objectFit: 'cover' }} />
+             <Image
+               src="/media/IMG_7554.jpeg"
+               alt="Najeeb in action"
+               fill
+               sizes="(max-width: 920px) 100vw, 50vw"
+               style={{ objectFit: 'cover' }}
+             />
           </motion.div>
           <p>
             My strongest work sits between product thinking and technical execution: understanding
@@ -59,33 +66,34 @@ export function About() {
             intelligence, data-driven products, and automation workflows that reduce repeated manual
             work.
           </p>
-          <div className="about-chip-row" aria-label="About focus areas">
-            <span>AI Engineering</span>
-            <span>Automation</span>
-            <span>Frontend Products</span>
-            <span>Backend Integrations</span>
-          </div>
+          <RevealGroup className="about-chip-row" aria-label="About focus areas">
+            {["AI Engineering", "Automation", "Frontend Products", "Backend Integrations"].map((chip) => (
+              <RevealItem as="span" key={chip}>
+                {chip}
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
         <div className="about-panel" aria-label="Profile summary">
           <div className="about-panel-header">
             <Code2 size={19} />
             <span>Profile snapshot</span>
           </div>
-          <div className="about-highlight-list">
+          <RevealGroup className="about-highlight-list" stagger={0.1}>
             {aboutHighlights.map((item) => {
               const Icon = item.icon;
 
               return (
-                <div className="about-highlight" key={item.label}>
+                <RevealItem className="about-highlight" key={item.label}>
                   <Icon size={19} />
                   <div>
                     <span>{item.label}</span>
                     <strong>{item.value}</strong>
                   </div>
-                </div>
+                </RevealItem>
               );
             })}
-          </div>
+          </RevealGroup>
           <div className="about-current">
             <span>Current direction</span>
             <p>{profile.summary}</p>

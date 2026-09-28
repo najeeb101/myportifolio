@@ -57,6 +57,7 @@ export function CustomCursor() {
       mouseY = event.clientY;
       setVisible(true);
       updateTargetState(event.target);
+      if (!frameId) frameId = window.requestAnimationFrame(animate);
     };
 
     const onPointerDown = () => setActive(true);
@@ -64,6 +65,8 @@ export function CustomCursor() {
     const onPointerLeave = () => setVisible(false);
     const onPointerOver = (event: PointerEvent) => updateTargetState(event.target);
 
+    // Runs only while the ring is still catching up, then sleeps until the
+    // next pointer move instead of burning a frame forever.
     const animate = () => {
       ringX += (mouseX - ringX) * 0.18;
       ringY += (mouseY - ringY) * 0.18;
@@ -71,10 +74,9 @@ export function CustomCursor() {
       dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
 
-      frameId = window.requestAnimationFrame(animate);
+      const settled = Math.abs(mouseX - ringX) < 0.1 && Math.abs(mouseY - ringY) < 0.1;
+      frameId = settled ? 0 : window.requestAnimationFrame(animate);
     };
-
-    frameId = window.requestAnimationFrame(animate);
     window.addEventListener("pointermove", onPointerMove);
     window.addEventListener("pointerdown", onPointerDown);
     window.addEventListener("pointerup", onPointerUp);

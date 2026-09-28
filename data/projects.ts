@@ -33,11 +33,11 @@ export const featuredProject: Project = {
   accent: "#ef4444",
   description:
     "AI cold-chain intelligence platform for food security in Qatar and the GCC, designed to predict remaining shelf life and spoilage risk before losses happen.",
-  stack: ["AI", "Sensor Data", "Predictive Modeling", "Food Security", "Cold Chain"],
+  stack: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "Redis", "MQTT", "Leaflet", "Docker", "Predictive ML"],
   status: "Open Innovation Award",
   year: "2026 - Present",
-  github: "#",
-  live: "#",
+  github: "https://github.com/Isl-d/Reboot-The-Earth-Cold-Chain-Logistics",
+  live: "https://thermal-trace-gilt.vercel.app",
   role: "Co-Founder & Lead Developer",
   impact:
     "Models each product's thermal state across farms, transport, cold storage, and retail so operators can act before perishable goods are lost.",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Lectura VideoNoteExtractor",
+    name: "Lectura",
     category: "AI Products",
     tagline: "Lectures in, study notes out",
     glyph: "wave",
