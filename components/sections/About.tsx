@@ -21,7 +21,7 @@ const aboutHighlights = [
   {
     icon: Rocket,
     label: "Building",
-    value: "RouteyAI and practical AI product systems",
+    value: "Thermal Trace, RouteyAI, and practical AI systems",
   },
   {
     icon: MapPin,
@@ -37,7 +37,7 @@ export function About() {
       <div className="about-grid">
         <div className="prose-block">
           <p>
-            I&apos;m Najeeb Barkhad, a computer science major at Qatar University focused on AI
+            I&apos;m Najeeb A. Abdi, a computer science major at Qatar University focused on AI
             engineering, frontend development, and automation. I like working on ideas that can move
             from a rough problem into something people can actually use.
           </p>
@@ -55,8 +55,8 @@ export function About() {
             enough for real users to trust.
           </p>
           <p>
-            Right now I&apos;m especially interested in practical AI tools, transport and operations
-            software, data-driven products, and automation workflows that reduce repeated manual
+            Right now I&apos;m especially interested in practical AI tools, cold-chain and transport
+            intelligence, data-driven products, and automation workflows that reduce repeated manual
             work.
           </p>
           <div className="about-chip-row" aria-label="About focus areas">

@@ -55,7 +55,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="footer-bottom">
         <span className="footer-copy-text">
-          Copyright {new Date().getFullYear()} NAJEEB BARKHAD. ALL RIGHTS RESERVED.
+          Copyright {new Date().getFullYear()} {profile.name.toUpperCase()}. ALL RIGHTS RESERVED.
         </span>
         <div className="footer-social-icons">
           <a href={socials.github} target="_blank" rel="noreferrer" aria-label="GitHub">

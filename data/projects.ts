@@ -2,7 +2,7 @@ export const projectCategories = ["AI Products", "Web Apps", "Games"] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
 
-export type ProjectGlyph = "route" | "document" | "grid" | "network";
+export type ProjectGlyph = "thermal" | "route" | "flow" | "wave" | "arena" | "document" | "grid" | "network" | "snake";
 
 export type Project = {
   name: string;
@@ -26,33 +26,118 @@ export type Project = {
 };
 
 export const featuredProject: Project = {
-  name: "RouteyAI",
+  name: "Thermal Trace",
   category: "AI Products",
-  tagline: "School transport, routed live",
-  glyph: "route",
-  accent: "#f97316",
+  tagline: "Shelf life, read from the cold chain",
+  glyph: "thermal",
+  accent: "#ef4444",
   description:
-    "School transport intelligence platform concept for safer live tracking, smarter routing, and clearer operations across Qatar and the GCC.",
-  stack: ["Next.js", "Supabase", "Mapbox", "TypeScript", "K-Means++"],
-  status: "In Progress",
-  year: "2026",
+    "AI cold-chain intelligence platform for food security in Qatar and the GCC, designed to predict remaining shelf life and spoilage risk before losses happen.",
+  stack: ["AI", "Sensor Data", "Predictive Modeling", "Food Security", "Cold Chain"],
+  status: "Open Innovation Award",
+  year: "2026 - Present",
   github: "#",
   live: "#",
-  role: "Product idea, full-stack build, routing logic",
-  impact: "Designed to reduce manual route planning and give schools a clearer view of buses, students, and daily transport operations.",
+  role: "Co-Founder & Lead Developer",
+  impact:
+    "Models each product's thermal state across farms, transport, cold storage, and retail so operators can act before perishable goods are lost.",
   highlights: [
-    "Live route and bus tracking concept for school operations teams.",
-    "Route optimization direction using clustering and map-based planning.",
-    "Parent and admin experience planned around fast status checks.",
+    "Developed the Thermal Reserve model to calculate item-level shelf life from zone-level sensor readings.",
+    "Uses produce-specific temperature limits so mixed loads are assessed item by item, not by one average.",
+    "Targets proactive spoilage-risk detection across the cold chain in Qatar and the GCC.",
   ],
   metrics: [
-    { value: "3", label: "planned user views" },
-    { value: "5", label: "core technologies" },
-    { value: "2026", label: "active build" },
+    { value: "4", label: "cold-chain stages" },
+    { value: "Item", label: "level modeling" },
+    { value: "GCC", label: "market focus" },
   ],
 };
 
 export const projects: Project[] = [
+  {
+    name: "RouteyAI",
+    category: "AI Products",
+    tagline: "School transport, routed live",
+    glyph: "route",
+    accent: "#f97316",
+    description:
+      "AI-powered school bus routing platform for the Qatar and GCC market, combining optimized routes, live GPS tracking, ETAs, and operations workflows.",
+    stack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "PostGIS", "Mapbox", "K-Means++", "TSP"],
+    status: "In Progress",
+    year: "2025 - Present",
+    github: "https://github.com/najeeb101/RouteyAI",
+    live: "#",
+    role: "Founder, sole engineer, and lead developer",
+    impact:
+      "Owns the route engine, database and RLS schema, backend APIs, and UI for a working platform used to plan, track, and operate school transport.",
+    metrics: [
+      { value: "4", label: "user roles" },
+      { value: "Live", label: "GPS tracking" },
+    ],
+  },
+  {
+    name: "Cohort Simulator",
+    category: "Web Apps",
+    tagline: "Graduation paths, simulated",
+    glyph: "flow",
+    accent: "#84cc16",
+    description:
+      "Discrete-event agent-based model of Qatar University CS student progression, using Monte Carlo simulation to reveal prerequisite and capacity constraints that can delay graduation.",
+    stack: ["Python", "Next.js", "React", "TypeScript", "Tailwind CSS", "Simulation"],
+    status: "Research Tool",
+    year: "2026",
+    github: "https://github.com/najeeb101/Single-Cohort-Flow-Simulator",
+    live: "#",
+    role: "Simulation model, Scenario Builder, Plan Builder, and dashboard workflow",
+    impact:
+      "Lets department leadership test curriculum and capacity scenarios, then see projected effects on student flow before committing to changes.",
+    metrics: [
+      { value: "12", label: "semester horizon" },
+      { value: "8", label: "study cohorts" },
+    ],
+  },
+  {
+    name: "Lectura VideoNoteExtractor",
+    category: "AI Products",
+    tagline: "Lectures in, study notes out",
+    glyph: "wave",
+    accent: "#eab308",
+    description:
+      "AI study-notes platform that turns YouTube lectures into transcripts, structured notes, exports, and a document-specific chat experience.",
+    stack: ["FastAPI", "Next.js", "TypeScript", "Supabase", "faster-whisper", "Groq", "OpenAI"],
+    status: "AI Product",
+    year: "2026",
+    github: "https://github.com/najeeb101/VideoNoteExtractor",
+    live: "#",
+    role: "Backend pipeline, authenticated API, frontend dashboard, and notes chat",
+    impact:
+      "Compresses long lecture videos into readable study material while keeping notes searchable, exportable, and conversational.",
+    metrics: [
+      { value: "3", label: "pipeline stages" },
+      { value: "2", label: "LLM providers" },
+    ],
+  },
+  {
+    name: "ArenaFit",
+    category: "Games",
+    tagline: "Reps counted, rivals ranked",
+    glyph: "arena",
+    accent: "#8b5cf6",
+    description:
+      "Browser-based fitness battle platform where players compete in live 1v1 rep-counting matches with AI pose tracking, Elo ranking, XP, achievements, and leaderboards.",
+    stack: ["Next.js", "NestJS", "TypeScript", "MediaPipe", "Prisma", "Socket.IO", "Turborepo"],
+    status: "Full-Stack App",
+    year: "2026",
+    github: "https://github.com/najeeb101/ArenaFit",
+    live: "#",
+    role: "Monorepo architecture, game loop, realtime API, and pose-counting integration",
+    impact:
+      "Explores how on-device pose AI and realtime competition can make home workouts feel measurable, ranked, and social.",
+    metrics: [
+      { value: "1v1", label: "battle mode" },
+      { value: "40", label: "seed players" },
+    ],
+  },
   {
     name: "Naja7 AI Contract Analyzer",
     category: "AI Products",
@@ -60,58 +145,79 @@ export const projects: Project[] = [
     glyph: "document",
     accent: "#3b82f6",
     description:
-      "Web app for uploading contract documents, storing them in Supabase, and generating AI-powered summaries and key document insights.",
-    stack: ["React", "TypeScript", "Vite", "Supabase", "Tailwind CSS", "shadcn-ui", "Gemini"],
-    status: "Project",
-    year: "2025",
-    github: "#",
+      "AI-assisted contract review demo for uploading TXT, PDF, and DOCX files, extracting readable text, generating reviews, and asking document-specific questions.",
+    stack: ["React", "TypeScript", "Vite", "Supabase", "Gemini", "pdfjs", "mammoth"],
+    status: "AI Product",
+    year: "2026",
+    github: "https://github.com/najeeb101/Naja7-AI",
     live: "#",
-    role: "Frontend development, Supabase integration, and AI document analysis workflow",
+    role: "Frontend development, Supabase auth/storage, and AI document analysis workflow",
     impact:
-      "Helps users upload contracts and quickly understand document content through summaries, stats, and AI-generated analysis.",
+      "Applies document parsing and QDB business rules to extract key terms and flag risk clauses for faster contract review decisions.",
     metrics: [
-      { value: "5MB", label: "max file size" },
-      { value: "6", label: "file types" },
+      { value: "3", label: "file types" },
+      { value: "10MB", label: "max file size" },
     ],
   },
   {
     name: "Silatha Word Search Game",
     category: "Games",
-    tagline: "Vocabulary as a quick game",
+    tagline: "Awareness as a quick game",
     glyph: "grid",
     accent: "#14b8a6",
     description:
-      "Interactive word search experience built for a fast, responsive browser-based learning flow with simple game mechanics.",
-    stack: ["React", "Vite", "Firebase"],
-    status: "Project",
+      "Educational word-search game focused on women's health, empowerment, and workplace equality, with progressive levels and Firebase deployment.",
+    stack: ["React", "Vite", "Firebase", "JavaScript", "React Router"],
+    status: "Live Game",
     year: "2026",
-    github: "#",
-    live: "#",
-    role: "Frontend build and interaction design",
-    impact: "Turns vocabulary practice into a lightweight browser game that can be played quickly on desktop or mobile.",
+    github: "https://github.com/najeeb101/word-search-game",
+    live: "https://silathagame.web.app",
+    role: "Frontend build, game interaction, and Firebase deployment",
+    impact: "Turns awareness topics into a quick browser game with a meaningful learning layer and mobile-friendly play.",
     metrics: [
-      { value: "3", label: "core services" },
-      { value: "2026", label: "project year" },
+      { value: "6", label: "levels" },
+      { value: "Live", label: "Firebase demo" },
     ],
   },
   {
-    name: "Social Media Platform",
+    name: "StudentHub",
     category: "Web Apps",
     tagline: "Posts, people, and relations",
     glyph: "network",
     accent: "#d946ef",
     description:
-      "Full-stack social application concept with user flows, data models, and modern web UI patterns.",
-    stack: ["Next.js", "Prisma", "JavaScript"],
-    status: "Project",
-    year: "2025",
-    github: "#",
-    live: "#",
+      "Student-focused social platform for posting thoughts, connecting with classmates, and practicing modern full-stack application patterns.",
+    stack: ["Next.js", "React", "Prisma", "SQLite", "JavaScript", "TypeScript"],
+    status: "Live App",
+    year: "2026",
+    github: "https://github.com/najeeb101/StudentHub",
+    live: "https://student-hub-alpha-six.vercel.app",
     role: "Full-stack concept and data modeling",
-    impact: "Explores authentication, posting flows, relational data, and reusable UI patterns.",
+    impact: "Explores student community workflows with a database-backed Next.js app and a deployed Vercel demo.",
     metrics: [
       { value: "3", label: "app layers" },
-      { value: "2025", label: "project year" },
+      { value: "Live", label: "Vercel demo" },
+    ],
+  },
+  {
+    name: "Snake Arcade",
+    category: "Games",
+    tagline: "A classic loop, rebuilt",
+    glyph: "snake",
+    accent: "#22c55e",
+    description:
+      "Premium canvas-based Snake game with animated menus, missions, combo scoring, power-ups, obstacles, run summaries, and local persistence.",
+    stack: ["React", "TypeScript", "Vite", "Framer Motion", "Canvas"],
+    status: "Game",
+    year: "2026",
+    github: "https://github.com/najeeb101/SnakeGame",
+    live: "#",
+    role: "Game engine, React UI, scoring systems, and persistence hooks",
+    impact:
+      "Rebuilds a classic arcade loop into a polished browser game with progression systems and responsive controls.",
+    metrics: [
+      { value: "4", label: "control modes" },
+      { value: "2.0", label: "version" },
     ],
   },
 ];

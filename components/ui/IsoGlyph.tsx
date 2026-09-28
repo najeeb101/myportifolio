@@ -8,6 +8,31 @@ type Cube = [x: number, y: number, z: number];
 // Each project gets its own little isometric sculpture, in the spirit of
 // Pantheon's per-archetype cube glyphs.
 const shapes: Record<ProjectGlyph, Cube[]> = {
+  // A pallet of cold-chain crates watched by a thermometer tower.
+  thermal: [
+    [0, 0, 0], [1, 0, 0], [0, 1, 0], [1, 1, 0], [1, 0, 1], [0, 1, 1],
+    [3, 3, 0], [3, 3, 1], [3, 3, 2], [3, 3, 3],
+  ],
+  // A cohort climbing semester steps toward graduation.
+  flow: [
+    [0, 0, 0], [0, 1, 0], [1, 0, 0], [1, 1, 0], [1, 0, 1],
+    [2, 0, 0], [2, 0, 1], [2, 0, 2], [3, 0, 0], [3, 0, 1], [3, 0, 2], [3, 0, 3],
+  ],
+  // An audio waveform rising out of a lecture recording.
+  wave: [
+    [0, 0, 0], [1, 0, 0], [1, 0, 1], [1, 0, 2], [2, 0, 0], [2, 0, 1],
+    [3, 0, 0], [3, 0, 1], [3, 0, 2], [3, 0, 3], [4, 0, 0],
+  ],
+  // Two raised fighters facing off across an arena floor.
+  arena: [
+    [0, 0, 0], [1, 0, 0], [2, 0, 0], [3, 0, 0], [0, 1, 0], [1, 1, 0], [2, 1, 0], [3, 1, 0],
+    [0, 0, 1], [0, 0, 2], [3, 1, 1], [3, 1, 2],
+  ],
+  // A coiled snake with a raised head and one pellet ahead of it.
+  snake: [
+    [0, 0, 0], [1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 2, 0], [1, 2, 0],
+    [0, 2, 0], [0, 3, 0], [0, 4, 0], [1, 4, 0], [1, 4, 1], [3, 4, 0],
+  ],
   // A bus route snaking across the grid with a raised "bus" cube.
   route: [
     [0, 0, 0], [1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 2, 0],

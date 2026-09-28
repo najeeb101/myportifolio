@@ -7,7 +7,7 @@ import { Typewriter } from "@/components/ui/Typewriter";
 import { profile, stats } from "@/data/profile";
 
 const words = ["AI products", "backend integrations", "frontend systems"];
-const typedPhrases = ["building RouteyAI", "automating workflows with n8n", "shipping Next.js products"];
+const typedPhrases = ["building Thermal Trace", "automating workflows with n8n", "shipping Next.js products"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const stagger = {
@@ -76,13 +76,13 @@ export function Hero() {
           <div className="hero-panel-glow" aria-hidden="true" />
           <motion.div 
             className="portrait-placeholder" 
-            aria-label="Najeeb Barkhad portrait"
+            aria-label="Najeeb A. Abdi portrait"
             animate={{ y: [0, -15, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
           >
             <Image 
               src="/media/IMG_7755.jpeg" 
-              alt="Najeeb Barkhad" 
+              alt="Najeeb A. Abdi"
               fill 
               style={{ objectFit: 'cover' }} 
               priority
@@ -115,8 +115,8 @@ export function Hero() {
                 Live build
               </span>
             </div>
-            <strong>RouteyAI</strong>
-            <p>School transport intelligence for routing, tracking, and operations.</p>
+            <strong>Thermal Trace</strong>
+            <p>Cold-chain intelligence for shelf-life and spoilage-risk prediction.</p>
           </div>
         </motion.div>
       </motion.div>

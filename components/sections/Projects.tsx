@@ -45,9 +45,9 @@ export function Projects() {
       <div className="projects-intro">
         <SectionHeader eyebrow="// projects" title="Pick a build, see what it does." />
         <p className="projects-intro-copy">
-          Every project here started as a real problem: school buses nobody could track, contracts
-          nobody wanted to read, vocabulary nobody wanted to drill. Pick one from the palette to open
-          its breakdown: the role I played, what it changes, and what it is built on.
+          Every project here started as a real problem: food spoiling in transit, school buses nobody
+          could track, contracts nobody wanted to read. Pick one from the palette to open its
+          breakdown: the role I played, what it changes, and what it is built on.
         </p>
       </div>
 

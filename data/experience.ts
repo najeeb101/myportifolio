@@ -9,16 +9,28 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "AI Intern",
+    role: "AI and Automation Intern",
     company: "Silatha",
-    period: "Dec 2025 - Present",
-    location: "Amsterdam, Remote",
+    period: "Oct 2025 - Present",
+    location: "Amsterdam, Netherlands (Remote)",
     highlights: [
-      "Designing AI automation pipelines for repeatable internal workflows.",
-      "Building data collection and monitoring flows with practical error handling.",
-      "Connecting APIs, scripts, and AI tools into usable business systems.",
+      "Designed and deployed production AI automation pipelines that replaced manual workflows across business functions.",
+      "Integrated third-party APIs into data pipelines with monitoring, error handling, and performance dashboards.",
+      "Supported weekly release cycles with reliable automation and data workflows.",
     ],
-    stack: ["Python", "n8n", "OpenAI API", "Automation"],
+    stack: ["Python", "n8n", "OpenAI API", "API Integration", "Monitoring"],
+  },
+  {
+    role: "Industry Partnership Intern",
+    company: "Scale AI via Qatar University",
+    period: "Jun 2026 - Aug 2026",
+    location: "Doha, Qatar",
+    highlights: [
+      "Completed an internship with Scale AI through Qatar University's industry partnership program.",
+      "Built the Cohort Simulator, a discrete-event model of QU CS student progression using Monte Carlo simulation.",
+      "Developed Scenario Builder and Plan Builder dashboards to test curriculum and capacity changes before implementation.",
+    ],
+    stack: ["Python", "Monte Carlo", "Agent-Based Simulation", "Next.js", "TypeScript"],
   },
   {
     role: "Research Intern - Aquaponics AI",
@@ -26,22 +38,10 @@ export const experience: ExperienceItem[] = [
     period: "Aug 2025 - Nov 2025",
     location: "Doha, Qatar",
     highlights: [
-      "Worked on AI-driven aquaponics research using machine learning concepts.",
-      "Explored federated learning and reinforcement learning for smarter control systems.",
-      "Translated research ideas into implementation plans and technical experiments.",
+      "Led AI research on a federated aquaponics control system using reinforcement learning for distributed model optimization.",
+      "Deployed an AI-enabled greenhouse prototype with ML-driven sensor and control hardware.",
+      "Worked in a multi-institution collaboration on applied AI for aquaponics.",
     ],
-    stack: ["ML", "Federated Learning", "Reinforcement Learning"],
-  },
-  {
-    role: "IT Student Task Force",
-    company: "ITS Department, Qatar University",
-    period: "Aug 2025 - Oct 2025",
-    location: "Doha, Qatar",
-    highlights: [
-      "Supported IT workflows and student-facing technical operations.",
-      "Collaborated with teams to resolve issues and improve service reliability.",
-      "Built stronger practical habits around support, communication, and systems thinking.",
-    ],
-    stack: ["IT Support", "Systems", "Operations"],
+    stack: ["Machine Learning", "Federated Learning", "Reinforcement Learning", "IoT"],
   },
 ];

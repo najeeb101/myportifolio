@@ -7,25 +7,26 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 import { SectionRail } from "@/components/ui/SectionRail";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const title = "Najeeb Barkhad | AI Engineering & Computer Science";
+const title = "Najeeb A. Abdi | AI Engineering & Computer Science";
 const description =
-  "Portfolio of Najeeb Barkhad, a computer science major building practical AI systems, automation workflows, and full-stack products.";
+  "Portfolio of Najeeb A. Abdi, a computer science major building AI automation, operational intelligence, and full-stack products.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
-  applicationName: "Najeeb Barkhad Portfolio",
-  authors: [{ name: "Najeeb Barkhad", url: siteUrl }],
-  creator: "Najeeb Barkhad",
+  applicationName: "Najeeb A. Abdi Portfolio",
+  authors: [{ name: "Najeeb A. Abdi", url: siteUrl }],
+  creator: "Najeeb A. Abdi",
   keywords: [
-    "Najeeb Barkhad",
+    "Najeeb A. Abdi",
     "AI engineering",
     "computer science",
     "portfolio",
     "automation",
     "full-stack development",
     "RouteyAI",
+    "Thermal Trace",
     "Qatar University",
   ],
   alternates: {
@@ -35,13 +36,13 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    siteName: "Najeeb Barkhad Portfolio",
+    siteName: "Najeeb A. Abdi Portfolio",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Najeeb Barkhad portfolio preview",
+        alt: "Najeeb A. Abdi portfolio preview",
       },
     ],
     locale: "en_US",

@@ -1,11 +1,11 @@
 export const profile = {
-  name: "Najeeb Barkhad",
+  name: "Najeeb A. Abdi",
   shortTitle: "AI Engineer | CS Major",
   seoTitle: "AI Engineering & AI-Powered Web Products",
   location: "Doha, Qatar",
   email: "najeebabdi75@gmail.com",
   summary:
-    "Building AI-powered web products, backend integrations, and automation tools with a focus on work that actually ships.",
+    "Building AI automation, operational intelligence, and full-stack products from prototype to deployment.",
 };
 
 export const socials = {
@@ -17,6 +17,6 @@ export const socials = {
 export const stats = [
   "CS Major",
   "Qatar University",
-  "AI Intern",
-  "4 Projects",
+  "Scale AI Intern",
+  "8 Public Projects",
 ];

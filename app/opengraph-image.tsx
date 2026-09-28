@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Najeeb Barkhad portfolio preview";
+export const alt = "Najeeb A. Abdi portfolio preview";
 export const size = {
   width: 1200,
   height: 630,
