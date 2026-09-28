@@ -22,7 +22,7 @@ const aboutHighlights = [
   {
     icon: Rocket,
     label: "Building",
-    value: "Thermal Trace, RouteyAI, and practical AI systems",
+    value: "CodeTutor, RouteyAI, and practical AI systems",
   },
   {
     icon: MapPin,
@@ -38,7 +38,7 @@ export function About() {
       <div className="about-grid">
         <div className="prose-block">
           <p>
-            I&apos;m Najeeb A. Abdi, a computer science major at Qatar University focused on AI
+            I&apos;m Najeeb Abdi, a computer science major at Qatar University focused on AI
             engineering, frontend development, and automation. I like working on ideas that can move
             from a rough problem into something people can actually use.
           </p>

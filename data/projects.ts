@@ -4,6 +4,7 @@ export type ProjectCategory = (typeof projectCategories)[number];
 
 export type ProjectGlyph =
   | "thermal"
+  | "tutor"
   | "route"
   | "flow"
   | "wave"
@@ -63,6 +64,28 @@ export const featuredProject: Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "CodeTutor",
+    category: "AI Products",
+    tagline: "Tutor, grader, training data",
+    glyph: "tutor",
+    accent: "#0ea5e9",
+    description:
+      "AI coding tutor and auto-grader platform for CS students, pairing a RAG-based tutor with an evaluation harness and an RL data pipeline that turns graded attempts into training data.",
+    stack: ["RAG", "LLMs", "Auto-Grading", "Eval Harness", "Reinforcement Learning", "GRPO"],
+    status: "In Progress",
+    year: "2026 - Present",
+    github: "#",
+    live: "#",
+    role: "RAG tutor, auto-grader, eval harness, and RL data pipeline",
+    impact:
+      "Gives CS students guided help on their code, while every graded attempt becomes training data for improving the tutor itself.",
+    highlights: [
+      "RAG-based tutor that helps students work through coding problems.",
+      "Auto-grader backed by an evaluation harness.",
+      "RL data pipeline (GRPO) that turns graded attempts into training data.",
+    ],
+  },
   {
     name: "RouteyAI",
     category: "AI Products",

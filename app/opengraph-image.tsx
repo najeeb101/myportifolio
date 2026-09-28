@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Najeeb A. Abdi portfolio preview";
+export const alt = "Najeeb Abdi portfolio preview";
 export const size = {
   width: 1200,
   height: 630,
@@ -102,7 +102,7 @@ export default function Image() {
             }}
           >
             <span>Najeeb</span>
-            <span>Barkhad</span>
+            <span>Abdi</span>
           </div>
           <div
             style={{

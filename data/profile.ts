@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Najeeb A. Abdi",
+  name: "Najeeb Abdi",
   shortTitle: "AI Engineer | CS Major",
   seoTitle: "AI Engineering & AI-Powered Web Products",
   location: "Doha, Qatar",

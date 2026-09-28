@@ -9,7 +9,7 @@ import { Typewriter } from "@/components/ui/Typewriter";
 import { profile, stats } from "@/data/profile";
 
 const words = ["AI products", "backend integrations", "frontend systems"];
-const typedPhrases = ["building Thermal Trace", "automating workflows with n8n", "shipping Next.js products"];
+const typedPhrases = ["building CodeTutor", "automating workflows with n8n", "shipping Next.js products"];
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const stagger = {
@@ -102,13 +102,13 @@ export function Hero() {
           <div className="hero-panel-glow" aria-hidden="true" />
           <motion.div 
             className="portrait-placeholder" 
-            aria-label="Najeeb A. Abdi portrait"
+            aria-label="Najeeb Abdi portrait"
             animate={{ y: [0, -15, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
           >
             <Image 
               src="/media/IMG_7755.jpeg" 
-              alt="Najeeb A. Abdi"
+              alt="Najeeb Abdi"
               fill
               sizes="(max-width: 920px) 90vw, 480px"
               style={{ objectFit: 'cover' }}
@@ -142,8 +142,8 @@ export function Hero() {
                 Live build
               </span>
             </div>
-            <strong>Thermal Trace</strong>
-            <p>Cold-chain intelligence for shelf-life and spoilage-risk prediction.</p>
+            <strong>CodeTutor</strong>
+            <p>AI coding tutor and auto-grader for CS students, with RAG, evals, and GRPO data.</p>
           </div>
         </motion.div>
       </motion.div>
