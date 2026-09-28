@@ -28,11 +28,6 @@ const shapes: Record<ProjectGlyph, Cube[]> = {
     [0, 0, 0], [1, 0, 0], [2, 0, 0], [3, 0, 0], [0, 1, 0], [1, 1, 0], [2, 1, 0], [3, 1, 0],
     [0, 0, 1], [0, 0, 2], [3, 1, 1], [3, 1, 2],
   ],
-  // Two lanes of road with delivery trucks at different points along them.
-  fleet: [
-    [0, 0, 0], [1, 0, 0], [2, 0, 0], [3, 0, 0], [0, 2, 0], [1, 2, 0], [2, 2, 0], [3, 2, 0],
-    [1, 0, 1], [0, 2, 1], [3, 2, 1], [3, 2, 2],
-  ],
   // A coiled snake with a raised head and one pellet ahead of it.
   snake: [
     [0, 0, 0], [1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 2, 0], [1, 2, 0],
