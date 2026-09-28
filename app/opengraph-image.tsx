@@ -123,7 +123,7 @@ export default function Image() {
             position: "relative",
           }}
         >
-          {["RouteyAI", "Automation", "Full-stack Products"].map((item) => (
+          {["CodeTutor", "Automation", "Full-stack Products"].map((item) => (
             <div
               key={item}
               style={{
