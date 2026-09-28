@@ -8,7 +8,6 @@ export type ProjectGlyph =
   | "route"
   | "flow"
   | "wave"
-  | "arena"
   | "document"
   | "grid"
   | "network"
@@ -147,27 +146,6 @@ export const projects: Project[] = [
     metrics: [
       { value: "3", label: "pipeline stages" },
       { value: "2", label: "LLM providers" },
-    ],
-  },
-  {
-    name: "ArenaFit",
-    category: "Games",
-    tagline: "Reps counted, rivals ranked",
-    glyph: "arena",
-    accent: "#8b5cf6",
-    description:
-      "Browser-based fitness battle platform where players compete in live 1v1 rep-counting matches with AI pose tracking, Elo ranking, XP, achievements, and leaderboards.",
-    stack: ["Next.js", "NestJS", "TypeScript", "MediaPipe", "Prisma", "Socket.IO", "Turborepo"],
-    status: "Full-Stack App",
-    year: "2026",
-    github: "https://github.com/najeeb101/ArenaFit",
-    live: "#",
-    role: "Monorepo architecture, game loop, realtime API, and pose-counting integration",
-    impact:
-      "Explores how on-device pose AI and realtime competition can make home workouts feel measurable, ranked, and social.",
-    metrics: [
-      { value: "1v1", label: "battle mode" },
-      { value: "40", label: "seed players" },
     ],
   },
   {

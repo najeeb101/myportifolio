@@ -28,11 +28,6 @@ const shapes: Record<ProjectGlyph, Cube[]> = {
     [0, 0, 0], [1, 0, 0], [1, 0, 1], [1, 0, 2], [2, 0, 0], [2, 0, 1],
     [3, 0, 0], [3, 0, 1], [3, 0, 2], [3, 0, 3], [4, 0, 0],
   ],
-  // Two raised fighters facing off across an arena floor.
-  arena: [
-    [0, 0, 0], [1, 0, 0], [2, 0, 0], [3, 0, 0], [0, 1, 0], [1, 1, 0], [2, 1, 0], [3, 1, 0],
-    [0, 0, 1], [0, 0, 2], [3, 1, 1], [3, 1, 2],
-  ],
   // A coiled snake with a raised head and one pellet ahead of it.
   snake: [
     [0, 0, 0], [1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 2, 0], [1, 2, 0],
