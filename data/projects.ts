@@ -139,7 +139,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Naja7 AI Contract Analyzer",
+    name: "Naja7 AI",
     category: "AI Products",
     tagline: "Reads the fine print for you",
     glyph: "document",
@@ -160,7 +160,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Silatha Word Search Game",
+    name: "Silatha Game",
     category: "Games",
     tagline: "Awareness as a quick game",
     glyph: "grid",

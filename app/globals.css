@@ -2249,11 +2249,19 @@ h1 span {
   color: var(--tile-accent);
 }
 
+/* Fixed-height stage so tall glyphs (e.g. the route) never push the title
+   below its neighbours; oversized glyphs scale down to fit. */
 .project-tile-glyph {
   display: grid;
-  min-height: 130px;
+  height: 130px;
   place-items: center;
   margin: 14px 0 18px;
+}
+
+/* A pixel cap: a % max-height would be ignored inside the auto-sized grid row. */
+.project-tile-glyph .iso-glyph {
+  width: auto;
+  max-height: 130px;
 }
 
 .project-tile-title {
