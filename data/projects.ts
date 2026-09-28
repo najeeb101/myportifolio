@@ -2,9 +2,14 @@ export const projectCategories = ["AI Products", "Web Apps", "Games"] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
 
+export type ProjectGlyph = "route" | "document" | "grid" | "network";
+
 export type Project = {
   name: string;
   category: ProjectCategory;
+  tagline: string;
+  glyph: ProjectGlyph;
+  accent: string;
   description: string;
   stack: string[];
   status: string;
@@ -23,6 +28,9 @@ export type Project = {
 export const featuredProject: Project = {
   name: "RouteyAI",
   category: "AI Products",
+  tagline: "School transport, routed live",
+  glyph: "route",
+  accent: "#f97316",
   description:
     "School transport intelligence platform concept for safer live tracking, smarter routing, and clearer operations across Qatar and the GCC.",
   stack: ["Next.js", "Supabase", "Mapbox", "TypeScript", "K-Means++"],
@@ -48,6 +56,9 @@ export const projects: Project[] = [
   {
     name: "Naja7 AI Contract Analyzer",
     category: "AI Products",
+    tagline: "Reads the fine print for you",
+    glyph: "document",
+    accent: "#3b82f6",
     description:
       "Web app for uploading contract documents, storing them in Supabase, and generating AI-powered summaries and key document insights.",
     stack: ["React", "TypeScript", "Vite", "Supabase", "Tailwind CSS", "shadcn-ui", "Gemini"],
@@ -66,6 +77,9 @@ export const projects: Project[] = [
   {
     name: "Silatha Word Search Game",
     category: "Games",
+    tagline: "Vocabulary as a quick game",
+    glyph: "grid",
+    accent: "#14b8a6",
     description:
       "Interactive word search experience built for a fast, responsive browser-based learning flow with simple game mechanics.",
     stack: ["React", "Vite", "Firebase"],
@@ -83,6 +97,9 @@ export const projects: Project[] = [
   {
     name: "Social Media Platform",
     category: "Web Apps",
+    tagline: "Posts, people, and relations",
+    glyph: "network",
+    accent: "#d946ef",
     description:
       "Full-stack social application concept with user flows, data models, and modern web UI patterns.",
     stack: ["Next.js", "Prisma", "JavaScript"],
