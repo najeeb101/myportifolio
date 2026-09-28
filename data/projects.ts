@@ -2,7 +2,17 @@ export const projectCategories = ["AI Products", "Web Apps", "Games"] as const;
 
 export type ProjectCategory = (typeof projectCategories)[number];
 
-export type ProjectGlyph = "thermal" | "route" | "flow" | "wave" | "arena" | "document" | "grid" | "network" | "snake";
+export type ProjectGlyph =
+  | "thermal"
+  | "route"
+  | "flow"
+  | "wave"
+  | "arena"
+  | "document"
+  | "grid"
+  | "network"
+  | "fleet"
+  | "snake";
 
 export type Project = {
   name: string;
@@ -200,6 +210,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: "Fleet Tracking",
+    category: "Web Apps",
+    tagline: "Every truck, live, no refresh",
+    glyph: "fleet",
+    accent: "#0ea5e9",
+    description:
+      "Real-time fleet dashboard that shows delivery vehicles and their status. Change a row in the database and every open browser updates within a second, with no refresh and no polling.",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase Realtime", "PostgreSQL"],
+    status: "Full-Stack App",
+    year: "2026",
+    github: "https://github.com/najeeb101/Real-Time-Fleet-Tracking",
+    live: "#",
+    role: "Realtime sync, database schema and RLS, and dashboard UI",
+    impact:
+      "Keeps every open dashboard in step with the database, and heals itself after a dropped connection without losing an update.",
+    highlights: [
+      "Subscribes to Supabase Realtime first and loads rows only once the channel is live, so no change slips through the gap.",
+      "Refetches on every reconnect, so a dropped websocket recovers on its own.",
+      "Row Level Security grants the public key read-only access to a single table.",
+    ],
+    metrics: [
+      { value: "<1s", label: "sync to every browser" },
+      { value: "0", label: "polling requests" },
+    ],
+  },
+  {
     name: "Snake Arcade",
     category: "Games",
     tagline: "A classic loop, rebuilt",
@@ -211,7 +247,7 @@ export const projects: Project[] = [
     status: "Game",
     year: "2026",
     github: "https://github.com/najeeb101/SnakeGame",
-    live: "#",
+    live: "https://najeeb-snake-arcade.vercel.app",
     role: "Game engine, React UI, scoring systems, and persistence hooks",
     impact:
       "Rebuilds a classic arcade loop into a polished browser game with progression systems and responsive controls.",
