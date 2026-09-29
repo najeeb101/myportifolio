@@ -42,6 +42,21 @@ Content lives in `data/` (profile, projects, experience, education, skills), so 
 never touch a component. See [architecture.md](architecture.md) for the structure and design
 decisions, and [AGENTS.md](AGENTS.md) for contribution guidelines.
 
+## Updating the Resume
+
+The resume PDF is generated from `resume/Najeeb Resume.html`. Edit that file, then print it
+with Microsoft Edge (PowerShell, from the repo root):
+
+```powershell
+$edge = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe"
+$src = ([Uri](Resolve-Path "resume\Najeeb Resume.html").Path).AbsoluteUri
+Start-Process -Wait -FilePath $edge -ArgumentList '--headless=new', '--disable-gpu', '--no-pdf-header-footer', "--print-to-pdf=$env:TEMP\resume.pdf", $src
+Copy-Item "$env:TEMP\resume.pdf" "public\resume\Najeeb Resume.pdf" -Force
+```
+
+Print to a path without spaces first (as above): Edge splits a `--print-to-pdf` path at spaces.
+Keep the resume to one US Letter page and check the result before committing.
+
 ## Deployment
 
 Hosted on Vercel. Every push to `main` deploys to production.

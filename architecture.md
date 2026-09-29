@@ -71,7 +71,9 @@ data/
   skills.ts             three skill groups (also feed the TechMarquee)
 public/
   media/                photos (served through next/image)
-  resume/Najeeb Resume.pdf
+  resume/Najeeb Resume.pdf   generated from resume/Najeeb Resume.html
+resume/
+  Najeeb Resume.html    one-page resume source (not served)
 ```
 
 ---
@@ -187,5 +189,5 @@ These keep scrolling smooth; keep them when adding features.
 | A project | `data/projects.ts` (plus a shape in `IsoGlyph.tsx` for a new glyph) |
 | Skills and the marquee | `data/skills.ts` (keep three groups; `Skills.tsx` labels them AI / WEB / DATA) |
 | Experience, education | `data/experience.ts`, `data/education.ts` |
-| Resume | replace `public/resume/Najeeb Resume.pdf` (same name keeps every link working) |
+| Resume | edit `resume/Najeeb Resume.html`, then regenerate `public/resume/Najeeb Resume.pdf` (see README, "Updating the Resume"); the same file name keeps every link working |
 | Gallery photos | `public/media/` and the `photos` list in `Gallery.tsx` |

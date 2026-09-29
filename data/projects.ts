@@ -158,7 +158,7 @@ export const projects: Project[] = [
       "AI-assisted contract review demo for uploading TXT, PDF, and DOCX files, extracting readable text, generating reviews, and asking document-specific questions.",
     stack: ["React", "TypeScript", "Vite", "Supabase", "Gemini", "pdfjs", "mammoth"],
     status: "AI Product",
-    year: "2026",
+    year: "2025",
     github: "https://github.com/najeeb101/Naja7-AI",
     live: "#",
     role: "Frontend development, Supabase auth/storage, and AI document analysis workflow",
