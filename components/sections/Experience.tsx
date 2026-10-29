@@ -14,7 +14,7 @@ export function Experience() {
 
   return (
     <MotionSection id="experience">
-      <SectionHeader eyebrow="// experience" title="Where I have been applying the work." />
+      <SectionHeader eyebrow="Experience" title="Where I have worked" />
       <div className="timeline" ref={timelineRef}>
         <motion.div className="timeline-progress" style={{ scaleY: progress }} aria-hidden="true" />
         {experience.map((item, index) => (

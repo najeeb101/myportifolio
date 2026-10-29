@@ -6,7 +6,7 @@ import { GraduationCap, Award, CheckCircle2 } from "lucide-react";
 export function Education() {
   return (
     <MotionSection id="education">
-      <SectionHeader eyebrow="// education" title="Academic base and community work." />
+      <SectionHeader eyebrow="Education" title="School and clubs" />
       <div className="education-grid">
         <article className="info-card">
           <div className="card-header">

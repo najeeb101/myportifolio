@@ -177,18 +177,17 @@ export function Projects() {
   return (
     <MotionSection id="projects" className="projects-section">
       <div className="projects-intro">
-        <SectionHeader eyebrow="// projects" title="Pick a build, see what it does." />
+        <SectionHeader eyebrow="Projects" title="Things I have built" />
         <p className="projects-intro-copy">
-          Every project here started as a real problem: food spoiling in transit, school buses nobody
-          could track, contracts nobody wanted to read. Pick one from the palette to open its
-          breakdown: the role I played, what it changes, and what it is built on.
+          Swipe through the cards and tap one to read more: what it does, what I did on it, and
+          what it runs on. Most have a live demo or the code on GitHub.
         </p>
       </div>
 
       <div className="project-palette-bar">
         <p>
-          <strong>Project palette / {pad(visible.length)} shown</strong>
-          <span>Drag or scroll sideways, it loops. Click a card to open it.</span>
+          <strong>{visible.length} projects</strong>
+          <span>Swipe or drag sideways. Tap a card for details.</span>
         </p>
         <LayoutGroup id="project-filters">
           <div className="project-filters" role="group" aria-label="Filter projects by category">

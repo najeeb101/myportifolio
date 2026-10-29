@@ -1,104 +1,53 @@
-"use client";
-
 import Image from "next/image";
-import { BrainCircuit, Code2, GraduationCap, MapPin, Rocket } from "lucide-react";
-import { motion } from "framer-motion";
 import { MotionSection } from "@/components/ui/MotionSection";
-import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { profile } from "@/data/profile";
 
-const aboutHighlights = [
-  {
-    icon: GraduationCap,
-    label: "Education",
-    value: "Computer Science major at Qatar University",
-  },
-  {
-    icon: BrainCircuit,
-    label: "Focus",
-    value: "AI engineering, frontend product work, and automation",
-  },
-  {
-    icon: Rocket,
-    label: "Building",
-    value: "CodeTutor, RouteyAI, and practical AI systems",
-  },
-  {
-    icon: MapPin,
-    label: "Based in",
-    value: profile.location,
-  },
+const facts = [
+  { label: "Studying", value: "B.S. Computer Science, Qatar University" },
+  { label: "Working on", value: "CodeTutor and RouteyAI" },
+  { label: "Interested in", value: "AI tools, logistics, and automation" },
+  { label: "Based in", value: profile.location },
 ];
 
 export function About() {
   return (
     <MotionSection id="about">
-      <SectionHeader eyebrow="// about" title="Turning AI ideas into usable web products." />
+      <SectionHeader eyebrow="About" title="A bit about me" />
       <div className="about-grid">
         <div className="prose-block">
           <p>
-            I&apos;m Najeeb Abdi, a computer science major at Qatar University focused on AI
-            engineering, frontend development, and automation. I like working on ideas that can move
-            from a rough problem into something people can actually use.
+            I&apos;m Najeeb, a computer science student at Qatar University. I like taking a messy
+            problem and turning it into something people can open and use, and I usually end up
+            doing the whole thing: the backend, the interface, and the boring parts in between.
           </p>
-          <motion.div 
-            className="about-photo"
-            initial={{ rotate: -2, scale: 0.98 }}
-            whileHover={{ rotate: 1, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >
-             <Image
-               src="/media/IMG_7554.jpeg"
-               alt="Najeeb in action"
-               fill
-               sizes="(max-width: 920px) 100vw, 50vw"
-               style={{ objectFit: 'cover' }}
-             />
-          </motion.div>
+          <div className="about-photo">
+            <Image
+              src="/media/IMG_7554.jpeg"
+              alt="Najeeb crossing a street"
+              fill
+              sizes="(max-width: 920px) 100vw, 50vw"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <p>
-            My strongest work sits between product thinking and technical execution: understanding
-            the workflow, designing the system, building the interface, and making the result clear
-            enough for real users to trust.
+            These days that mostly means AI. I&apos;ve automated workflows at Silatha, built a
+            graduation simulator with Scale AI, and I&apos;m now working on a tutor that grades code
+            and learns from the results.
           </p>
           <p>
-            Right now I&apos;m especially interested in practical AI tools, cold-chain and transport
-            intelligence, data-driven products, and automation workflows that reduce repeated manual
-            work.
+            Outside of class I run events for the university&apos;s AI organization and work as a
+            student assistant on QU&apos;s IT task force.
           </p>
-          <RevealGroup className="about-chip-row" aria-label="About focus areas">
-            {["AI Engineering", "Automation", "Frontend Products", "Backend Integrations"].map((chip) => (
-              <RevealItem as="span" key={chip}>
-                {chip}
-              </RevealItem>
-            ))}
-          </RevealGroup>
         </div>
-        <div className="about-panel" aria-label="Profile summary">
-          <div className="about-panel-header">
-            <Code2 size={19} />
-            <span>Profile snapshot</span>
-          </div>
-          <RevealGroup className="about-highlight-list" stagger={0.1}>
-            {aboutHighlights.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <RevealItem className="about-highlight" key={item.label}>
-                  <Icon size={19} />
-                  <div>
-                    <span>{item.label}</span>
-                    <strong>{item.value}</strong>
-                  </div>
-                </RevealItem>
-              );
-            })}
-          </RevealGroup>
-          <div className="about-current">
-            <span>Current direction</span>
-            <p>{profile.summary}</p>
-          </div>
-        </div>
+        <dl className="about-panel" aria-label="Quick facts">
+          {facts.map((item) => (
+            <div className="about-highlight" key={item.label}>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </MotionSection>
   );

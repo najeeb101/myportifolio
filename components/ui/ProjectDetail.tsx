@@ -26,11 +26,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       transition={{ duration: 0.5, ease }}
       aria-live="polite"
     >
-      <span className="project-detail-corner project-detail-corner--tl" aria-hidden="true" />
-      <span className="project-detail-corner project-detail-corner--br" aria-hidden="true" />
-
       <div className="project-detail-visual">
-        <div className="project-detail-halo" aria-hidden="true" />
         <IsoGlyph glyph={project.glyph} accent={project.accent} size={210} />
       </div>
 

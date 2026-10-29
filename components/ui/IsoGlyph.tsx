@@ -25,6 +25,11 @@ const shapes: Record<ProjectGlyph, Cube[]> = {
     [0, 0, 0], [1, 0, 0], [1, 0, 1], [1, 0, 2], [2, 0, 0], [2, 0, 1],
     [3, 0, 0], [3, 0, 1], [3, 0, 2], [3, 0, 3], [4, 0, 0],
   ],
+  // Players' guesses piled up around the answer, like the game's results chart.
+  estimate: [
+    [0, 1, 0], [1, 1, 0], [2, 1, 0], [3, 1, 0], [4, 1, 0],
+    [0, 0, 0], [1, 0, 0], [1, 0, 1], [2, 0, 0], [2, 0, 1], [2, 0, 2], [3, 0, 0], [3, 0, 1], [4, 0, 0],
+  ],
   // A coiled snake with a raised head and one pellet ahead of it.
   snake: [
     [0, 0, 0], [1, 0, 0], [2, 0, 0], [2, 1, 0], [2, 2, 0], [1, 2, 0],

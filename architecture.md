@@ -29,7 +29,6 @@ There is no backend. Contact is a `mailto:` link, and all content lives in `data
 ```
 Navbar
 Hero          #home
-TechMarquee   (no id; decorative strip of tools)
 About         #about
 Experience    #experience
 Projects      #projects
@@ -41,7 +40,7 @@ Footer
 ```
 
 `app/layout.tsx` wraps everything in `ThemeProvider` and adds the page-wide chrome:
-`CustomCursor`, `ScrollProgress`, `SectionRail`, and `BackToTop`.
+`ScrollProgress`, `SectionRail`, and `BackToTop`.
 
 `SectionRail` finds sections by id, so a new section needs an entry in its `sections` list to
 appear in the side counter.
@@ -68,7 +67,7 @@ data/
   projects.ts           featured project, project list, categories, glyph names
   experience.ts         timeline entries
   education.ts          education and activities
-  skills.ts             three skill groups (also feed the TechMarquee)
+  skills.ts             three skill groups
 public/
   media/                photos (served through next/image)
   resume/Najeeb Resume.pdf   generated from resume/Najeeb Resume.html
@@ -124,8 +123,8 @@ A horizontal rail that loops forever, above a detail card for the selected proje
 
 ### ProjectTile / ProjectDetail / IsoGlyph
 
-- `ProjectTile` tilts toward the cursor and draws a spotlight that follows it (mouse only).
-  Its description types in with `TypeReveal` the first time it is seen.
+- `ProjectTile` is a plain card: number, glyph, name, tagline, description, category, year.
+  Its glyph drops in the first time the tile is seen.
 - `ProjectDetail` shows role, impact, highlights, metrics, stack, and Code / Live links. A link
   of `"#"` renders as a disabled "Code soon" / "Demo soon".
 - `IsoGlyph` draws each project's isometric cube sculpture from the `shapes` map. A new
@@ -137,14 +136,10 @@ A horizontal rail that loops forever, above a detail card for the selected proje
 | Component | What it does |
 |---|---|
 | `MotionSection` | Fades each section up as it enters the viewport |
-| `SectionHeader` | `// eyebrow` slide-in and word-by-word masked title reveal |
-| `Reveal` (`RevealGroup` / `RevealItem`) | Staggered blur-and-rise for lists and chips |
-| `MagneticLink` | Buttons that lean toward the cursor (hero and contact CTAs) |
-| `TechMarquee` | Two CSS-animated ribbons of skills, in opposite directions |
-| `Typewriter` | Hero "currently …" line |
-| `CustomCursor` | Dot and trailing ring; hidden on touch and reduced motion |
+| `SectionHeader` | Small label plus the section title (no animation of its own) |
 
-The hero copy and portrait drift apart on scroll (parallax) on side-by-side layouts only.
+Motion is kept deliberately light: sections fade up once, project glyphs drop in, and the
+filter pill slides. There is no custom cursor, typewriter, marquee, tilt, or parallax.
 
 ---
 
@@ -152,17 +147,15 @@ The hero copy and portrait drift apart on scroll (parallax) on side-by-side layo
 
 These keep scrolling smooth; keep them when adding features.
 
-- **Animate `transform` and `opacity` only.** The hero grid drifts by translating an oversized
-  layer, not by animating `background-position`, which would repaint every frame.
+- **Animate `transform` and `opacity` only.**
 - **No `backdrop-filter` on cards.** It is recomputed on every scroll frame and is invisible
   over the dark background. Only the fixed navbar keeps its blur.
 - **Every photo goes through `next/image` with a `sizes` prop.** The originals are phone photos
   up to 3.6 MB; the gallery serves resized WebP (about 46 KB for a 3.1 MB original). Gallery
   entries list the real, EXIF-rotated width and height.
-- **No always-on animation loops.** `CustomCursor` stops its `requestAnimationFrame` loop once
-  the ring catches up and restarts on the next pointer move.
-- **Respect reduced motion.** `MotionConfig reducedMotion="user"` covers Framer Motion; the
-  tilt, magnetic pull, and parallax also check `useReducedMotion`; `globals.css` shortens
+- **No always-on animation loops.** The only repeating animation is the small pulse on
+  projects marked "In Progress".
+- **Respect reduced motion.** `MotionConfig reducedMotion="user"` covers Framer Motion; `globals.css` shortens
   CSS animations under `prefers-reduced-motion`.
 
 ---
@@ -185,9 +178,9 @@ These keep scrolling smooth; keep them when adding features.
 | To change | Edit |
 |---|---|
 | Name, title, email, socials, hero stats | `data/profile.ts` |
-| Hero "current focus" and typed phrases | `components/sections/Hero.tsx` |
+| Hero copy and "Working on now" card | `components/sections/Hero.tsx` |
 | A project | `data/projects.ts` (plus a shape in `IsoGlyph.tsx` for a new glyph) |
-| Skills and the marquee | `data/skills.ts` (keep three groups; `Skills.tsx` labels them AI / WEB / DATA) |
+| Skills | `data/skills.ts` (each group renders as its own card) |
 | Experience, education | `data/experience.ts`, `data/education.ts` |
 | Resume | edit `resume/Najeeb Resume.html`, then regenerate `public/resume/Najeeb Resume.pdf` (see README, "Updating the Resume"); the same file name keeps every link working |
 | Gallery photos | `public/media/` and the `photos` list in `Gallery.tsx` |

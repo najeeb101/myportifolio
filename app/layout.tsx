@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { BackToTop } from "@/components/ui/BackToTop";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { SectionRail } from "@/components/ui/SectionRail";
 
 // Self-hosted and preloaded by next/font, so text no longer waits on a
@@ -36,6 +35,7 @@ export const metadata: Metadata = {
     "full-stack development",
     "RouteyAI",
     "Thermal Trace",
+    "Taqriban",
     "Qatar University",
   ],
   alternates: {
@@ -78,7 +78,6 @@ export default function RootLayout({
     <html lang="en" className={fontVariables} suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <CustomCursor />
           <ScrollProgress />
           <SectionRail />
           {children}

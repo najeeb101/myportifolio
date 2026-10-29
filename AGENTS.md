@@ -5,11 +5,11 @@
 This repository contains a Next.js personal portfolio site for Najeeb Abdi, live at <https://najeeb-abdi.vercel.app>. See `architecture.md` for how the pieces fit together.
 
 - `app/page.tsx` composes the homepage sections.
-- `app/layout.tsx` defines metadata and the root providers, plus page-wide chrome (custom cursor, scroll progress, section rail, back-to-top).
+- `app/layout.tsx` defines metadata and the root providers, plus page-wide chrome (scroll progress, section rail, back-to-top).
 - `app/globals.css` contains global styles, theme variables, responsive layout rules, and component styling.
 - `components/layout/` contains shared layout pieces such as `Navbar` and `Footer`.
 - `components/sections/` contains homepage sections such as `Hero`, `About`, `Experience`, `Projects`, `Skills`, `Gallery`, `Education`, and `Contact`.
-- `components/ui/` contains reusable UI helpers: project tiles, detail card and isometric glyphs, motion helpers (`MotionSection`, `Reveal`, `MagneticLink`, `TechMarquee`, `Typewriter`, `TypeReveal`), brand icons, theme toggle, scroll progress, section rail, and back-to-top controls.
+- `components/ui/` contains reusable UI helpers: project tiles, detail card and isometric glyphs, the `MotionSection` and `SectionHeader` helpers, brand icons, theme toggle, scroll progress, section rail, and back-to-top controls.
 - `data/` contains structured portfolio content for profile, projects, experience, education, and skills.
 - `public/` contains public assets, including media and the resume PDF.
 
