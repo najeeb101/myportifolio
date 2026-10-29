@@ -15,9 +15,9 @@ const brandFont = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["700", "800"]
 const fontVariables = [bodyFont, monoFont, displayFont, brandFont].map((font) => font.variable).join(" ");
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const title = "Najeeb Abdi | AI Engineering & Computer Science";
+const title = "Najeeb Abdi | Applied AI Engineer & CS Student";
 const description =
-  "Portfolio of Najeeb Abdi, a computer science major building AI automation, operational intelligence, and full-stack products.";
+  "Najeeb Abdi is an applied AI engineer and computer science student at Qatar University, building AI tools, web apps, and games.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   creator: "Najeeb Abdi",
   keywords: [
     "Najeeb Abdi",
-    "AI engineering",
+    "applied AI engineer",
     "computer science",
     "portfolio",
     "automation",

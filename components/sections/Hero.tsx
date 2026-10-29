@@ -14,8 +14,9 @@ const rise = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
 };
-// The name is the page's largest paint, so it is visible from the first frame
-// and only slides into place; fading it in held mobile LCP until hydration.
+// The name and intro are the page's largest paints on phones, so they are visible
+// from the first frame and only slide into place; fading them in held mobile LCP
+// until hydration.
 const settle = {
   hidden: { y: 16 },
   show: { y: 0, transition: { duration: 0.5, ease } },
@@ -33,7 +34,7 @@ export function Hero() {
             {profile.name}
             <span>I build web apps, and lately most of them use AI.</span>
           </motion.h1>
-          <motion.p className="hero-subtitle" variants={rise}>
+          <motion.p className="hero-subtitle" variants={settle}>
             I study computer science at Qatar University. Most of what I make starts with a problem I
             ran into or someone told me about: buses nobody could track, food going bad in transit,
             lectures too long to rewatch.
