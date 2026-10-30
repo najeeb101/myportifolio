@@ -19,8 +19,8 @@ const photos = [
     src: "/media/code-to-console.jpg",
     width: 2432,
     height: 1824,
-    caption: "From Code to Console, a game development talk at QU",
-    alt: "Najeeb on stage with the organizers and the two Tmtam Studio speakers holding certificates",
+    caption: "Moderating From Code to Console, a game dev fireside chat at QU",
+    alt: "Najeeb on stage after moderating the From Code to Console fireside chat, with the two Tmtam Studio speakers holding certificates",
   },
   {
     src: "/media/IMG_1822.jpeg",
