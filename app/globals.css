@@ -609,6 +609,16 @@ h1 span {
   line-height: 1.75;
 }
 
+.about-photo {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 34vw, 380px);
+  margin: 14px 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
 .about-panel {
   display: grid;
   align-self: start;

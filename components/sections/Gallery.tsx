@@ -9,6 +9,20 @@ import { motion } from "framer-motion";
 // serves resized WebP instead of the multi-megabyte originals.
 const photos = [
   {
+    src: "/media/world-investment-forum.jpg",
+    width: 1187,
+    height: 1711,
+    caption: "9th World Investment Forum, Doha",
+    alt: "Najeeb with a speaker in front of the UNCTAD World Investment Forum 2026 backdrop",
+  },
+  {
+    src: "/media/code-to-console.jpg",
+    width: 2432,
+    height: 1824,
+    caption: "From Code to Console, a game development talk at QU",
+    alt: "Najeeb on stage with the organizers and the two Tmtam Studio speakers holding certificates",
+  },
+  {
     src: "/media/IMG_1822.jpeg",
     width: 2268,
     height: 2722,
