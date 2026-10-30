@@ -43,13 +43,7 @@ const photos = [
     caption: "Qatar University graduation ceremony",
     alt: "Najeeb in a suit outside the Qatar University Events Complex on graduation day",
   },
-  {
-    src: "/media/IMG_1772.jpeg",
-    width: 1699,
-    height: 3020,
-    caption: "Badge on, ready for the day",
-    alt: "Mirror selfie of Najeeb wearing an event lanyard and badge",
-  },
+
 ];
 
 const containerVariants = {

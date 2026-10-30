@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MotionSection } from "@/components/ui/MotionSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { profile } from "@/data/profile";
@@ -21,15 +20,6 @@ export function About() {
             problem and turning it into something people can open and use, and I usually end up
             doing the whole thing: the backend, the interface, and the boring parts in between.
           </p>
-          <div className="about-photo">
-            <Image
-              src="/media/IMG_7554.jpeg"
-              alt="Najeeb crossing a street"
-              fill
-              sizes="(max-width: 920px) 100vw, 50vw"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
           <p>
             These days that mostly means AI. I&apos;ve automated workflows at Silatha, built a
             graduation simulator with Scale AI, and I&apos;m now working on a tutor that grades code
