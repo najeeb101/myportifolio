@@ -40,8 +40,8 @@ const photos = [
     src: "/media/IMG_3700.jpg",
     width: 2208,
     height: 1242,
-    caption: "With friends on an expo floor",
-    alt: "Selfie of Najeeb in purple sunglasses with four friends wearing event badges",
+    caption: "With friends at Web Summit",
+    alt: "Selfie of Najeeb in purple sunglasses with four friends wearing Web Summit badges",
   },
   {
     src: "/media/IMG_6892.jpeg",
