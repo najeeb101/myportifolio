@@ -65,28 +65,6 @@ export const featuredProject: Project = {
 
 export const projects: Project[] = [
   {
-    name: "CodeTutor",
-    category: "AI Products",
-    tagline: "Helps students, then learns from them",
-    glyph: "tutor",
-    accent: "#0ea5e9",
-    description:
-      "A coding tutor and auto-grader for CS students. The tutor answers from course material (RAG), the grader runs on an eval harness, and graded attempts are saved as RL training data.",
-    stack: ["RAG", "LLMs", "Auto-Grading", "Eval Harness", "Reinforcement Learning", "GRPO"],
-    status: "In Progress",
-    year: "2026 - Present",
-    github: "#",
-    live: "#",
-    role: "RAG tutor, auto-grader, eval harness, and RL data pipeline",
-    impact:
-      "Students get hints on their own code instead of full answers, and every graded attempt becomes data for making the tutor better.",
-    highlights: [
-      "Tutor that pulls from course material (RAG) to walk students through a problem.",
-      "Auto-grader built on an evaluation harness, so grading is repeatable.",
-      "Pipeline that turns graded attempts into GRPO training data.",
-    ],
-  },
-  {
     name: "RouteyAI",
     category: "AI Products",
     tagline: "School buses you can actually track",

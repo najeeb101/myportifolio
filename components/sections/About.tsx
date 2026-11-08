@@ -5,7 +5,7 @@ import { profile } from "@/data/profile";
 
 const facts = [
   { label: "Studying", value: "B.S. Computer Science, Qatar University" },
-  { label: "Working on", value: "CodeTutor and RouteyAI" },
+  { label: "Working on", value: "Thermal Trace and Taqriban" },
   { label: "Interested in", value: "AI tools, logistics, and automation" },
   { label: "Based in", value: profile.location },
 ];

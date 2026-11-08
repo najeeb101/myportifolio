@@ -11,7 +11,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "AI and Automation Intern",
     company: "Silatha",
-    period: "Oct 2025 - Present",
+    period: "Oct 2025 - Jan 2026",
     location: "Amsterdam, Netherlands (Remote)",
     highlights: [
       "I build automations in n8n and Python that use the OpenAI API to do work the team used to do by hand.",

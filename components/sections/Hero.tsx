@@ -74,8 +74,8 @@ export function Hero() {
           </div>
           <div className="hero-showcase">
             <span>Working on now</span>
-            <strong>CodeTutor</strong>
-            <p>A coding tutor and auto-grader for CS students.</p>
+            <strong>Thermal Trace</strong>
+            <p>Cold-chain intelligence that warns operators before food spoils.</p>
           </div>
         </motion.div>
       </motion.div>
