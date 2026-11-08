@@ -213,48 +213,7 @@ export const projects: Project[] = [
     impact: "People learn a few things while they play, and it works fine on a phone.",
     metrics: [
       { value: "6", label: "levels" },
-      { value: "Live", label: "Firebase demo" },
-    ],
-  },
-  {
-    name: "StudentHub",
-    category: "Web Apps",
-    tagline: "A small social network for students",
-    glyph: "network",
-    accent: "#d946ef",
-    description:
-      "Post, follow classmates, and see what they are up to. I built it to practise full-stack work with a real database behind it.",
-    stack: ["Next.js", "React", "Prisma", "SQLite", "JavaScript", "TypeScript"],
-    status: "Live App",
-    year: "2026",
-    github: "https://github.com/najeeb101/StudentHub",
-    live: "https://student-hub-alpha-six.vercel.app",
-    role: "Full-stack build and data model",
-    impact: "Users, posts, and connections modelled in Prisma, with a live demo on Vercel.",
-    metrics: [
-      { value: "3", label: "app layers" },
-      { value: "Live", label: "Vercel demo" },
-    ],
-  },
-  {
-    name: "Snake Arcade",
-    category: "Games",
-    tagline: "Snake, with a few more ideas",
-    glyph: "snake",
-    accent: "#22c55e",
-    description:
-      "Snake on a canvas, plus missions, combos, power-ups, obstacles, and a summary after each run. Your best scores are saved in the browser.",
-    stack: ["React", "TypeScript", "Vite", "Framer Motion", "Canvas"],
-    status: "Game",
-    year: "2026",
-    github: "https://github.com/najeeb101/SnakeGame",
-    live: "https://najeeb-snake-arcade.vercel.app",
-    role: "Game engine, React UI, scoring systems, and persistence hooks",
-    impact:
-      "I wrote the game loop, scoring, and saves myself, with four ways to control the snake.",
-    metrics: [
-      { value: "4", label: "control modes" },
-      { value: "2.0", label: "version" },
+      { value: "~200", label: "players" },
     ],
   },
 ];
