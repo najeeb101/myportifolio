@@ -42,7 +42,7 @@ export const featuredProject: Project = {
   glyph: "thermal",
   accent: "#ef4444",
   description:
-    "Tracks temperature across the cold chain and estimates how much shelf life each item has left, so food in Qatar and the GCC gets sold or moved before it spoils.",
+    "Tracks temperature across the cold chain and estimates how much shelf life each load has left, so food in Qatar and the GCC gets sold or moved before it spoils.",
   stack: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "Redis", "MQTT", "Leaflet", "Docker", "Predictive ML"],
   status: "Open Innovation Award",
   year: "2026 - Present",
@@ -52,13 +52,13 @@ export const featuredProject: Project = {
   impact:
     "Follows a product from the farm through trucks, cold rooms, and shops, and warns operators while there is still time to do something about it.",
   highlights: [
-    "Wrote the Thermal Reserve model, which turns sensor readings for a zone into a shelf-life estimate for each item in it.",
-    "Each type of produce has its own temperature limits, so a mixed load is judged item by item instead of by one average.",
+    "Wrote the shelf-life model: an Arrhenius model that turns a load's temperature history into how much safe life it has left.",
+    "Each product has its own safe temperature range, so a load is judged against the limits for what it actually holds.",
     "Won the Open Innovation Award.",
   ],
   metrics: [
     { value: "4", label: "cold-chain stages" },
-    { value: "Item", label: "level modeling" },
+    { value: "Per-product", label: "temperature limits" },
     { value: "GCC", label: "market focus" },
   ],
 };
@@ -94,14 +94,14 @@ export const projects: Project[] = [
     accent: "#f97316",
     description:
       "School bus platform for Qatar and the GCC. It plans the routes, shows where each bus is on a live map, and gives parents an ETA.",
-    stack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "PostGIS", "Mapbox", "K-Means++", "TSP"],
-    status: "In Progress",
-    year: "2025 - Present",
+    stack: ["Next.js", "TypeScript", "Supabase", "PostGIS", "Edge Functions", "Mapbox", "Expo", "K-means"],
+    status: "Live Site",
+    year: "2025 - 2026",
     github: "https://github.com/najeeb101/RouteyAI",
-    live: "#",
+    live: "https://routeyai.vercel.app",
     role: "Founder, sole engineer, and lead developer",
     impact:
-      "I built all of it: the route engine (K-Means++ to group stops, a TSP heuristic to order them), the database and its access rules, the API, and the apps for admins, drivers, and parents.",
+      "I built all of it: the route engine (K-means to group stops, then nearest-neighbour and cheapest-insertion ordering on Mapbox driving times), the database and its access rules, the API, and the apps for admins, drivers, and parents.",
     metrics: [
       { value: "4", label: "user roles" },
       { value: "Live", label: "GPS tracking" },
@@ -173,27 +173,6 @@ export const projects: Project[] = [
     metrics: [
       { value: "3", label: "questions a day" },
       { value: "20", label: "puzzles written" },
-    ],
-  },
-  {
-    name: "Naja7 AI",
-    category: "AI Products",
-    tagline: "Reads the contract so you don't have to",
-    glyph: "document",
-    accent: "#3b82f6",
-    description:
-      "Upload a contract as TXT, PDF, or DOCX. It pulls out the text, writes a review, and lets you ask questions about that document.",
-    stack: ["React", "TypeScript", "Vite", "Supabase", "Gemini", "pdfjs", "mammoth"],
-    status: "AI Product",
-    year: "2025",
-    github: "https://github.com/najeeb101/Naja7-AI",
-    live: "#",
-    role: "Frontend development, Supabase auth/storage, and AI document analysis workflow",
-    impact:
-      "Checks the contract against QDB's business rules, lists the key terms, and flags clauses that look risky.",
-    metrics: [
-      { value: "3", label: "file types" },
-      { value: "10MB", label: "max file size" },
     ],
   },
   {

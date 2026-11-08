@@ -70,6 +70,7 @@ function poly(points: [number, number][]) {
 
 // Pure SVG + CSS: the drop-in (.iso-drop) and hover bob (.iso-cube) are CSS
 // animations, so dozens of looping tiles cost no per-cube JS or observers.
+// Cubes render only once `play` is true, keeping unseen rail clones light.
 export function IsoGlyph({
   glyph,
   accent,
@@ -105,7 +106,9 @@ export function IsoGlyph({
       data-play={play}
       style={{ "--glyph-accent": accent } as React.CSSProperties}
     >
-      {cubes.map(([x, y, z], index) => {
+      {/* Off-screen tiles (most of the looping rail) keep only the sized <svg>;
+          the cubes mount when the tile is first seen, which starts the drop-in. */}
+      {play && cubes.map(([x, y, z], index) => {
         const top = poly([project(x, y, z + 1), project(x + 1, y, z + 1), project(x + 1, y + 1, z + 1), project(x, y + 1, z + 1)]);
         const right = poly([project(x + 1, y, z), project(x + 1, y + 1, z), project(x + 1, y + 1, z + 1), project(x + 1, y, z + 1)]);
         const left = poly([project(x, y + 1, z), project(x + 1, y + 1, z), project(x + 1, y + 1, z + 1), project(x, y + 1, z + 1)]);
