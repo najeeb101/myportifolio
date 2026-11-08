@@ -99,15 +99,15 @@
   <div class="row sub"><span>AI cold-chain intelligence platform for food security in Qatar/GCC</span><span>Doha, Qatar</span></div>
   <ul>
     <li>Designed an AI platform that monitors perishable food across the cold chain (farm, transport, cold storage, retail), modeling each product's thermal state to predict remaining shelf life and spoilage risk before losses happen.</li>
-    <li>Developed the "Thermal Reserve" model, which calculates per-item shelf life from zone-level sensor readings using produce-specific temperature limits, so mixed loads in one truck are judged item by item instead of against one average.</li>
+    <li>Developed the shelf-life model, an Arrhenius deterioration model that turns a load's temperature history into its remaining safe life against product-specific temperature limits.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">RouteyAI, Founder &amp; Lead Developer</span><span class="sub">May 2025 – Present</span></div>
   <div class="row sub"><span>AI-powered school bus routing platform for the Qatar/GCC market</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Founded and built an AI route-optimization engine combining K-Means++ clustering with TSP heuristics to generate efficient, constraint-aware bus routes for school transport operators.</li>
-    <li>Architected the full stack on Next.js and TypeScript with a FastAPI optimization service, Supabase (PostGIS + Realtime), and Mapbox GL JS, with real-time GPS tracking so dispatchers, drivers, and parents see live bus position and ETA on one map.</li>
+    <li>Founded and built a route-optimization engine combining K-means clustering with nearest-neighbour and cheapest-insertion routing on Mapbox driving times to generate bus routes for school transport operators.</li>
+    <li>Architected the full stack on Next.js and TypeScript with Supabase (PostGIS, Realtime, Edge Functions), and Mapbox GL JS, with real-time GPS tracking so dispatchers, drivers, and parents see live bus position and ETA on one map.</li>
   </ul>
 </div>
 <div class="entry">
@@ -141,7 +141,7 @@
 
 <h2>Skills</h2>
 <div class="skills">
-  <p><b>AI / ML:</b> Machine Learning, Deep Learning (TensorFlow), RL (GRPO), Federated Learning, RAG, LLM Evals, K-Means++ &amp; TSP Heuristics</p>
+  <p><b>AI / ML:</b> Machine Learning, Deep Learning (TensorFlow), RL (GRPO), Federated Learning, RAG, LLM Evals, Clustering &amp; Routing Heuristics</p>
   <p><b>AI Automation:</b> OpenAI API, n8n, API Integration, Monitoring &amp; Error Handling, Prototype Deployment</p>
   <p><b>Web &amp; Full-Stack:</b> React.js, Next.js, TypeScript, Vite, FastAPI, REST APIs, Tailwind CSS, Web Scraping</p>
   <p><b>Data &amp; Infrastructure:</b> Supabase (PostgreSQL, PostGIS, Realtime), Firebase, Redis, Docker, Mapbox GL JS, Data Pipelines</p>
