@@ -180,6 +180,27 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: "Naja7 AI",
+    category: "AI Products",
+    tagline: "Reads the contract so you don't have to",
+    glyph: "document",
+    accent: "#3b82f6",
+    description:
+      "Upload a contract as TXT, PDF, or DOCX. It pulls out the text, writes a review, and lets you ask questions about that one document.",
+    stack: ["React", "TypeScript", "Vite", "Supabase", "Gemini", "pdfjs", "mammoth"],
+    status: "Started at AIX Hackathon 2025",
+    year: "2025 - Present",
+    github: "https://github.com/najeeb101/Naja7-AI",
+    live: "#",
+    role: "Team member at the hackathon, then rebuilt the demo myself",
+    impact:
+      "Flags clauses that look risky, lists the key terms, and keeps each visitor's documents separate with row-level security. I plan to keep building it.",
+    metrics: [
+      { value: "3", label: "file types" },
+      { value: "10MB", label: "max file size" },
+    ],
+  },
+  {
     name: "Silatha Game",
     category: "Games",
     tagline: "Word search with something to say",
@@ -197,27 +218,6 @@ export const projects: Project[] = [
     metrics: [
       { value: "6", label: "levels" },
       { value: "~200", label: "players" },
-    ],
-  },
-  {
-    name: "IEEE Q-Con Website",
-    category: "Web Apps",
-    tagline: "One site for a whole conference",
-    glyph: "network",
-    accent: "#3b82f6",
-    description:
-      "The official website for IEEE Q-Con, the student engineering conference in Doha, set up for the 2027 edition. It merges last year's two separate sites into one.",
-    stack: ["Astro", "TypeScript", "CSS", "GitHub Actions", "GitHub Pages"],
-    status: "Live Site",
-    year: "2026 - Present",
-    github: "https://github.com/najeeb101/IEEEQCON2026",
-    live: "https://najeeb101.github.io/IEEEQCON2026/",
-    role: "Sole developer",
-    impact:
-      "Committee members update dates, venue, and open or closed statuses through one config file instead of touching code.",
-    metrics: [
-      { value: "2", label: "old sites merged" },
-      { value: "0", label: "servers to run" },
     ],
   },
 ];
