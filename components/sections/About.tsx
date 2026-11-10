@@ -5,7 +5,7 @@ import { profile } from "@/data/profile";
 
 const facts = [
   { label: "Studying", value: "B.S. Computer Science, Qatar University" },
-  { label: "Working on", value: "Thermal Trace and Taqriban" },
+  { label: "Working on", value: "Thermal Trace and CodeTutor" },
   { label: "Interested in", value: "AI tools, logistics, and automation" },
   { label: "Based in", value: profile.location },
 ];
@@ -33,7 +33,8 @@ export function About() {
           <p>
             These days that mostly means AI. I&apos;ve automated workflows at Silatha, built a
             graduation simulator with Scale AI, and I&apos;m now building Thermal Trace, an AI platform that
-            tracks how long food stays fresh across the cold chain.
+            tracks how long food stays fresh across the cold chain, and CodeTutor, an auto-grader
+            and tutor for intro programming.
           </p>
           <p>
             Outside of class I help organize events for the university&apos;s AI organization, and I&apos;m

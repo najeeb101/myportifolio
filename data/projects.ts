@@ -65,6 +65,32 @@ export const featuredProject: Project = {
 
 export const projects: Project[] = [
   {
+    name: "CodeTutor",
+    category: "AI Products",
+    tagline: "Grades code, tutors, and tests the AI",
+    glyph: "tutor",
+    accent: "#0ea5e9",
+    description:
+      "A practice platform for intro Python with instant auto-grading and an AI tutor that gives hints, not answers. The same grader also scores AI models and is the reward for reinforcement-learning training of a small code model.",
+    stack: ["Python", "FastAPI", "Next.js", "Postgres", "pgvector", "Docker", "Ollama", "GRPO"],
+    status: "Built and measured",
+    year: "2026",
+    github: "https://github.com/najeeb101/CodeTutor",
+    live: "#",
+    role: "Solo developer: grader, problem bank, eval harness, tutor, RL training, API, and UI",
+    impact:
+      "One grading function serves students, model evals, and RL rewards, so they can never disagree. Results come with their caveats: the tutor's hints and the GRPO gain were within noise, and the write-up says so.",
+    highlights: [
+      "33 problems with hidden tests, validated against 97 known-wrong solutions.",
+      "Evaluated Qwen2.5-Coder 1.5B and 7B with pass@k and confidence intervals.",
+      "Hybrid-search tutor found the right note section in the top 3 for 40 of 40 test questions.",
+    ],
+    metrics: [
+      { value: "33", label: "problems" },
+      { value: "8", label: "weeks, all done" },
+    ],
+  },
+  {
     name: "RouteyAI",
     category: "AI Products",
     tagline: "School buses you can actually track",

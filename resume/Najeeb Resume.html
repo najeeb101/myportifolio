@@ -69,15 +69,14 @@
   <div class="row sub"><span>Qatar University Industry Partnership Program</span><span>Doha, Qatar</span></div>
   <ul>
     <li>Engineered the CS Intake Planner end to end: an agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan (prerequisites, seat limits, pass/fail, dropout), built in Python and FastAPI.</li>
-    <li>Turned the simulation into a decision tool that recommends the largest intake within department-set limits, with 95% uncertainty bounds, delivered as a Next.js dashboard for the Head of Department.</li>
-    <li>Added a local-LLM advisor (Ollama) that explains results in plain language.</li>
+    <li>Turned the simulation into a decision tool that recommends the largest intake within department-set limits, with 95% uncertainty bounds, delivered as a Next.js dashboard for the Head of Department, with a local-LLM advisor (Ollama) that explains results.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">AI and Automation Intern</span><span class="sub">Oct 2025 – Jan 2026</span></div>
   <div class="row sub"><span>Silatha (Remote)</span><span>Amsterdam, Netherlands</span></div>
   <ul>
-    <li>Designed and deployed 3 production AI automation workflows (n8n, Python, OpenAI API) with third-party API integrations, monitoring, and error handling, replacing manual processes.</li>
+    <li>Designed and deployed 3 production AI automation workflows (n8n, Python, OpenAI API) with API integrations, monitoring, and error handling, replacing manual processes.</li>
     <li>Built and deployed a 6-level educational word search game (React, Firebase) with cross-device progress sync, played by ~200 players.</li>
   </ul>
 </div>
@@ -85,7 +84,7 @@
   <div class="row"><span class="title">Research Intern, AI-Based Aquaponics System Development</span><span class="sub">Aug 2025 – Nov 2025</span></div>
   <div class="row sub"><span>Qatar University</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Joined a multi-institution AI research team building a federated aquaponics control system; set up the reinforcement learning model for distributed optimization.</li>
+    <li>Joined a multi-institution team building a federated aquaponics control system; set up its reinforcement learning model.</li>
   </ul>
 </div>
 
@@ -96,15 +95,23 @@
   <ul>
     <li>Led development in a 5-person team; built the Arrhenius shelf-life model that turns temperature history into remaining safe life.</li>
     <li>Enforced a "deterministic math owns every number" architecture: every value carries provenance, and the LLM only explains.</li>
-    <li>Designed the end-to-end system: simulated refrigerated trucks and a real sensor node stream telemetry over MQTT into a FastAPI backend, where ML estimates spoilage risk, an optimizer picks the best cold store, and a food-loss engine reports kg and QAR saved.</li>
+    <li>Designed the end-to-end system: truck telemetry over MQTT into FastAPI, with ML spoilage-risk estimates and a cold-store optimizer.</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="row"><span class="title">CodeTutor, Solo Developer</span><span class="sub">Sep 2026 – Present</span></div>
+  <div class="row sub"><span>AI coding tutor, auto-grader, and eval lab for intro CS (FastAPI, Postgres/pgvector, Next.js, Docker)</span><span>Doha, Qatar</span></div>
+  <ul>
+    <li>Built a sandboxed auto-grader and a 33-problem Python bank with hidden tests, validated against 97 known-wrong solutions; the same grader scores student code, evaluates LLMs (Qwen2.5-Coder 1.5B and 7B, pass@k with intervals), and is the reward for GRPO training.</li>
+    <li>Built a local-LLM hint tutor with hybrid retrieval (right note section in the top 3 for 40 of 40 test questions) and a guardrail against leaking solutions; reported results honestly, including a GRPO gain within noise.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">Lectura, Solo Developer</span><span class="sub">Mar 2026 – Oct 2026</span></div>
   <div class="row sub"><span>AI study tool that turns lecture videos into timestamped notes (FastAPI, faster-whisper, Next.js, Supabase, Docker)</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built an AI pipeline that turns lecture videos into timestamped notes: yt-dlp download, local faster-whisper transcription, chunking, and map-reduce LLM summarization with provider fallback across Groq, OpenAI, and local Ollama, plus optional slide OCR merged into the notes.</li>
-    <li>Wrapped it in an authenticated FastAPI service (Supabase auth, row-level security, free-tier quotas of 3 videos/month, live progress streaming) with a Next.js frontend (seekable timestamps, chapters, export, "chat with your notes"), containerized with Docker; tested end to end on 5 lecture videos from 3 to 30 minutes, all processed successfully.</li>
+    <li>Built an AI pipeline that turns lecture videos into timestamped notes: yt-dlp download, local faster-whisper transcription, chunking, and map-reduce LLM summarization with provider fallback across Groq, OpenAI, and local Ollama, plus optional slide OCR.</li>
+    <li>Wrapped it in an authenticated FastAPI service (Supabase auth, row-level security, free-tier quotas of 3 videos/month, live progress streaming) with a Next.js frontend (timestamps, export, "chat with your notes"), containerized with Docker; tested on 5 lecture videos from 3 to 30 minutes, all processed successfully.</li>
   </ul>
 </div>
 <div class="entry">
@@ -112,18 +119,16 @@
   <div class="row sub"><span>School bus route planning and live tracking for Qatar schools</span><span>Doha, Qatar</span></div>
   <ul>
     <li>Built solo: K-means clustering plus nearest-neighbour and cheapest-insertion routing on Mapbox driving times, and web and mobile apps for admins, drivers, and parents (Next.js, Expo, Supabase/PostGIS).</li>
-    <li>Wound down in Sep 2026 after the Ministry of Education rolled out its own national attendance system, which would have left the product with a single feature.</li>
+    <li>Wound down in Sep 2026 after the Ministry of Education launched its own national attendance system.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">Taqriban, Solo Developer</span><span class="sub">Oct 2026 – Present</span></div>
   <div class="row sub"><span>Arabic-first daily estimation game, live at taqriban.vercel.app</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built and launched a mobile-first, right-to-left game (Next.js, Supabase); all data access goes through Postgres security-definer functions with RLS deny-all, so answers stay server-side until a guess is locked.</li>
-    <li>Set up CI (Vitest, Playwright, migration guard) and nightly backups; wrote 40 days of puzzles.</li>
+    <li>Built and launched a mobile-first, right-to-left game (Next.js, Supabase) where all data access goes through Postgres security-definer functions with RLS deny-all, so answers stay server-side until a guess is locked; plus CI, nightly backups, and 40 days of puzzles.</li>
   </ul>
 </div>
-<p><b>Other Projects:</b> Naja7 AI (AIX Hackathon 2025), bilingual Arabic/English contract analysis prototype (Streamlit, OpenAI, Azure Translator).</p>
 
 <h2>Activities &amp; Leadership</h2>
 <div class="entry">
@@ -144,15 +149,20 @@
 
 <h2>Skills</h2>
 <div class="skills">
-  <p><b>AI / ML:</b> Machine Learning, Deep Learning (TensorFlow), Reinforcement Learning, Federated Learning, Monte Carlo Simulation, LLM Apps (OpenAI, Groq, Ollama), Whisper / OCR, n8n</p>
+  <p><b>AI / ML:</b> Machine Learning, Deep Learning (TensorFlow), Reinforcement Learning, Federated Learning, Monte Carlo Simulation, LLM Apps (OpenAI, Groq, Ollama), RAG, LLM Evals, GRPO, Whisper / OCR, n8n</p>
   <p><b>Web &amp; Full-Stack:</b> React, Next.js, TypeScript, Vite, Astro, Expo, FastAPI, Flask, REST APIs, WebSockets, Tailwind CSS</p>
   <p><b>Data &amp; Infrastructure:</b> Supabase (PostgreSQL, PostGIS, Realtime, RLS), Firebase, Redis, MQTT, Mapbox GL JS</p>
-  <p><b>Testing &amp; DevOps:</b> pytest, Vitest, Playwright, CI/CD (GitHub Actions), Docker, Docker Compose, Vercel</p>
-  <p><b>Languages &amp; Tools:</b> Python, JS/TS, SQL, Java, HTML/CSS, Git, Postman | <b>Spoken:</b> English (Fluent), Arabic</p>
+  <p><b>Languages &amp; Tools:</b> Python, JS/TS, SQL, Java, HTML/CSS, Git, pytest, Playwright, GitHub Actions, Docker | <b>Spoken:</b> English (Fluent), Arabic</p>
 </div>
 
 </body>
 </html>
+
+
+
+
+
+
 
 
 
