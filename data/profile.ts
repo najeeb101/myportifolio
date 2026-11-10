@@ -18,5 +18,5 @@ export const stats = [
   "CS Major",
   "Qatar University",
   "Scale AI Intern",
-  "18 Projects",
+  "8 Projects",
 ];
