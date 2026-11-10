@@ -75,7 +75,7 @@ export function Hero() {
           <div className="hero-showcase">
             <span>Working on now</span>
             <strong>Thermal Trace</strong>
-            <p>Cold-chain intelligence that warns operators before food spoils.</p>
+            <p>A cold-chain AI platform that won the Open Innovation Award at the UN Reboot the Earth Hackathon.</p>
           </div>
         </motion.div>
       </motion.div>

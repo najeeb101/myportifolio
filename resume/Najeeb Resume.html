@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -42,11 +42,14 @@
   li { margin: 0.6pt 0; padding-left: 2pt; }
   p { margin: 1.5pt 0 0; }
   .skills p { margin: 0.8pt 0 0; }
+  .tag { margin: 1pt 0 0; text-align: center; font-size: 10pt; font-weight: 700; color: #1f3864; letter-spacing: 0.3pt; }
+  .summary { margin: 2pt 0 0; text-align: center; font-size: 9.5pt; }
 </style>
 </head>
-<body>
+
 
 <h1>NAJEEB ABDI</h1>
+<p class="tag">Computer Science Student | Applied AI Engineer</p>
 <p class="contact">
   Doha, Qatar | <a href="mailto:najeebabdi75@gmail.com">najeebabdi75@gmail.com</a> | (+974) 33047295 |
   Portfolio: <a href="https://najeeb-abdi.vercel.app">najeeb-abdi.vercel.app</a> |
@@ -57,8 +60,7 @@
 <h2>Education</h2>
 <div class="entry">
   <div class="row"><span class="title">B.S. in Computer Science</span><span class="sub">Expected May 2027</span></div>
-  <div class="row sub"><span>Qatar University</span><span>Doha, Qatar</span></div>
-  <p>Coursework: Data Structures &amp; Algorithms, OOP, Software Engineering, Algorithm Design &amp; Analysis, AI Fundamentals, Machine Learning.</p>
+  <div class="row sub"><span>Qatar University | Focus: Applied AI &amp; Machine Learning</span><span>Doha, Qatar</span></div>
 </div>
 
 <h2>Experience</h2>
@@ -66,15 +68,16 @@
   <div class="row"><span class="title">Industry Partnership Intern, Scale AI</span><span class="sub">Jun 2026 – Aug 2026</span></div>
   <div class="row sub"><span>Qatar University Industry Partnership Program</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built the CS Intake Planner, an agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan (prerequisites, seat limits, pass/fail, dropout) in Python and FastAPI.</li>
-    <li>Designed an intake planner that recommends the largest intake within department-set limits (95% uncertainty bounds), with a Next.js dashboard for the Head of Department, a local-LLM advisor (Ollama), and ~286 pytest tests.</li>
+    <li>Engineered the CS Intake Planner end to end: an agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan (prerequisites, seat limits, pass/fail, dropout), built in Python and FastAPI.</li>
+    <li>Turned the simulation into a decision tool that recommends the largest intake within department-set limits, with 95% uncertainty bounds, delivered as a Next.js dashboard for the Head of Department.</li>
+    <li>Added a local-LLM advisor (Ollama) that explains results in plain language.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">AI and Automation Intern</span><span class="sub">Oct 2025 – Jan 2026</span></div>
   <div class="row sub"><span>Silatha (Remote)</span><span>Amsterdam, Netherlands</span></div>
   <ul>
-    <li>Designed and deployed production AI automation pipelines (n8n, Python, OpenAI API) with third-party API integrations, monitoring, and error handling, replacing manual workflows across several business functions.</li>
+    <li>Designed and deployed 3 production AI automation workflows (n8n, Python, OpenAI API) with third-party API integrations, monitoring, and error handling, replacing manual processes.</li>
     <li>Built and deployed a 6-level educational word search game (React, Firebase) with cross-device progress sync, played by ~200 players.</li>
   </ul>
 </div>
@@ -82,7 +85,7 @@
   <div class="row"><span class="title">Research Intern, AI-Based Aquaponics System Development</span><span class="sub">Aug 2025 – Nov 2025</span></div>
   <div class="row sub"><span>Qatar University</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Led AI research on a federated aquaponics control system using reinforcement learning for distributed model optimization, and deployed an AI-enabled greenhouse prototype with ML-driven sensors and control hardware across institutions.</li>
+    <li>Joined a multi-institution AI research team building a federated aquaponics control system; set up the reinforcement learning model for distributed optimization.</li>
   </ul>
 </div>
 
@@ -91,50 +94,43 @@
   <div class="row"><span class="title">Thermal Trace, Co-Founder &amp; Lead Developer | Open Innovation Award, UN Reboot the Earth Hackathon</span><span class="sub">Sep 2026 – Present</span></div>
   <div class="row sub"><span>Cold-chain decision platform for Qatar/GCC (FastAPI, MQTT, PostgreSQL, Redis, React)</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Lead development; built the shelf-life model, an Arrhenius model that turns a load's temperature history into its remaining safe life.</li>
+    <li>Led development in a 5-person team; built the Arrhenius shelf-life model that turns temperature history into remaining safe life.</li>
     <li>Enforced a "deterministic math owns every number" architecture: every value carries provenance, and the LLM only explains.</li>
+    <li>Designed the end-to-end system: simulated refrigerated trucks and a real sensor node stream telemetry over MQTT into a FastAPI backend, where ML estimates spoilage risk, an optimizer picks the best cold store, and a food-loss engine reports kg and QAR saved.</li>
   </ul>
 </div>
 <div class="entry">
-  <div class="row"><span class="title">Generative Gains, Founder</span><span class="sub">Nov 2026 – Present</span></div>
-  <div class="row sub"><span>Enterprise AI company for Qatar and the GCC; Thermal Trace is its first product. Built the website (Next.js, Tailwind CSS)</span><span>Doha, Qatar</span></div>
-</div>
-<div class="entry">
-  <div class="row"><span class="title">Taqriban, Solo Developer</span><span class="sub">Oct 2026 – Present</span></div>
-  <div class="row sub"><span>Arabic-first daily estimation game, live at taqriban.vercel.app</span><span>Doha, Qatar</span></div>
+  <div class="row"><span class="title">Lectura, Solo Developer</span><span class="sub">Mar 2026 – Oct 2026</span></div>
+  <div class="row sub"><span>AI study tool that turns lecture videos into timestamped notes (FastAPI, faster-whisper, Next.js, Supabase, Docker)</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built and launched a mobile-first, right-to-left game (Next.js, Supabase); all data access goes through Postgres security-definer functions with RLS deny-all, so answers stay server-side until a guess is locked.</li>
-    <li>Set up CI (Vitest, Playwright, migration guard) and nightly backups; wrote and sourced 40 days of Arabic puzzles.</li>
+    <li>Built an AI pipeline that turns lecture videos into timestamped notes: yt-dlp download, local faster-whisper transcription, chunking, and map-reduce LLM summarization with provider fallback across Groq, OpenAI, and local Ollama, plus optional slide OCR merged into the notes.</li>
+    <li>Wrapped it in an authenticated FastAPI service (Supabase auth, row-level security, free-tier quotas of 3 videos/month, live progress streaming) with a Next.js frontend (seekable timestamps, chapters, export, "chat with your notes"), containerized with Docker; tested end to end on 5 lecture videos from 3 to 30 minutes, all processed successfully.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">RouteyAI, Founder &amp; Lead Developer</span><span class="sub">Mar 2026 – Sep 2026</span></div>
   <div class="row sub"><span>School bus route planning and live tracking for Qatar schools</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built it solo: K-means clustering plus nearest-neighbour and cheapest-insertion routing on Mapbox driving times, and web and mobile apps for admins, drivers, and parents (Next.js, Expo, Supabase/PostGIS).</li>
-    <li>Stopped in Sep 2026 after the Ministry of Education launched its own system covering most of the product.</li>
+    <li>Built solo: K-means clustering plus nearest-neighbour and cheapest-insertion routing on Mapbox driving times, and web and mobile apps for admins, drivers, and parents (Next.js, Expo, Supabase/PostGIS).</li>
+    <li>Wound down in Sep 2026 after the Ministry of Education rolled out its own national attendance system, which would have left the product with a single feature.</li>
   </ul>
 </div>
 <div class="entry">
-  <div class="row"><span class="title">IEEE Q-Con Conference Website, Sole Developer</span><span class="sub">Oct 2026 – Present</span></div>
+  <div class="row"><span class="title">Taqriban, Solo Developer</span><span class="sub">Oct 2026 – Present</span></div>
+  <div class="row sub"><span>Arabic-first daily estimation game, live at taqriban.vercel.app</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built the official IEEE Q-Con 2027 site (Astro, GitHub Actions), merging two legacy sites; committee members update it through config, not code.</li>
+    <li>Built and launched a mobile-first, right-to-left game (Next.js, Supabase); all data access goes through Postgres security-definer functions with RLS deny-all, so answers stay server-side until a guess is locked.</li>
+    <li>Set up CI (Vitest, Playwright, migration guard) and nightly backups; wrote 40 days of puzzles.</li>
   </ul>
 </div>
-<div class="entry">
-  <div class="row"><span class="title">Robot Swarm Control Hub, ACM QU</span><span class="sub">Oct 2026 – Present</span></div>
-  <ul>
-    <li>Built the hub for a Raspberry Pi robot swarm (Python, Flask, WebSockets) with live camera feeds, dead-man stops, and per-robot access control.</li>
-  </ul>
-</div>
-<p><b>Other Projects:</b> Lectura, lecture-video-to-notes tool (FastAPI, faster-whisper, map-reduce LLM summaries, Supabase, Docker); AIX Hackathon 2025, bilingual Arabic/English contract analysis prototype in a 3-person team (Streamlit, OpenAI, Azure Translator); Freelance Design &amp; Content (menu design, study guides).</p>
+<p><b>Other Projects:</b> Naja7 AI (AIX Hackathon 2025), bilingual Arabic/English contract analysis prototype (Streamlit, OpenAI, Azure Translator).</p>
 
 <h2>Activities &amp; Leadership</h2>
 <div class="entry">
-  <div class="row"><span class="title">Head of Events, Artificial Intelligence Organization</span><span class="sub">Apr 2025 – Present</span></div>
+  <div class="row"><span class="title">Member, Events Committee, Artificial Intelligence Organization</span><span class="sub">Apr 2025 – Present</span></div>
   <div class="row sub"><span>Qatar University</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Co-organize campus-wide AI events, including AI Week and the Innovation Program, coordinating logistics and demo setup.</li>
+    <li>Help organize campus-wide AI events, including AI Week and the Innovation Program, coordinating logistics and demo setup.</li>
   </ul>
 </div>
 <div class="entry">
@@ -144,16 +140,30 @@
     <li>Pitched an early-stage startup concept under mentor guidance; hosted (MC) the Fall 2026 masterclass "AI-Powered Innovation".</li>
   </ul>
 </div>
-<p><b>Also:</b> Member, ACM QU; Events Member, Mechatronics Committee; Student Assistant, IT Student Task Force; Events &amp; IT Support, Research Complex.</p>
+<p><b>Also:</b> Member, Events Team and Tech Team, ACM QU; Events Member, Mechatronics Committee; Student Assistant, IT Student Task Force.</p>
 
 <h2>Skills</h2>
 <div class="skills">
-  <p><b>AI / ML:</b> Machine Learning, Deep Learning (TensorFlow), Reinforcement Learning, Federated Learning, Monte Carlo Simulation, LLM Apps (OpenAI, Groq, Ollama), n8n</p>
+  <p><b>AI / ML:</b> Machine Learning, Deep Learning (TensorFlow), Reinforcement Learning, Federated Learning, Monte Carlo Simulation, LLM Apps (OpenAI, Groq, Ollama), Whisper / OCR, n8n</p>
   <p><b>Web &amp; Full-Stack:</b> React, Next.js, TypeScript, Vite, Astro, Expo, FastAPI, Flask, REST APIs, WebSockets, Tailwind CSS</p>
-  <p><b>Data &amp; Infrastructure:</b> Supabase (PostgreSQL, PostGIS, Realtime, RLS), Firebase, Redis, MQTT, Docker, GitHub Actions, Vercel, Mapbox GL JS</p>
-  <p><b>Languages &amp; Tools:</b> Python, JS/TS, SQL, Java, HTML/CSS, Git, pytest, Vitest, Playwright | <b>Spoken:</b> English (Fluent), Arabic</p>
+  <p><b>Data &amp; Infrastructure:</b> Supabase (PostgreSQL, PostGIS, Realtime, RLS), Firebase, Redis, MQTT, Mapbox GL JS</p>
+  <p><b>Testing &amp; DevOps:</b> pytest, Vitest, Playwright, CI/CD (GitHub Actions), Docker, Docker Compose, Vercel</p>
+  <p><b>Languages &amp; Tools:</b> Python, JS/TS, SQL, Java, HTML/CSS, Git, Postman | <b>Spoken:</b> English (Fluent), Arabic</p>
 </div>
 
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

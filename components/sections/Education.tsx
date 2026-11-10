@@ -16,13 +16,6 @@ export function Education() {
           <h3>{education.school}</h3>
           <p className="degree-text">{education.degree}</p>
           <p className="period-text">{education.period}</p>
-          <div className="chip-row">
-            {education.coursework.map((course) => (
-              <span className="chip chip--quiet" key={course}>
-                {course}
-              </span>
-            ))}
-          </div>
         </article>
         <article className="info-card">
           <div className="card-header">

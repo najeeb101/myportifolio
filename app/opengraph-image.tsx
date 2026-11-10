@@ -1,13 +1,13 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Najeeb Abdi, applied AI engineer and CS student";
+export const alt = "Najeeb Abdi, CS student and applied AI engineer";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
 
-const projects = ["Thermal Trace", "RouteyAI", "Taqriban", "Cohort Simulator"];
+const projects = ["Thermal Trace", "Lectura", "RouteyAI", "Taqriban"];
 
 export default function Image() {
   return new ImageResponse(

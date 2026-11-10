@@ -32,12 +32,12 @@ export function About() {
           </div>
           <p>
             These days that mostly means AI. I&apos;ve automated workflows at Silatha, built a
-            graduation simulator with Scale AI, and I&apos;m now working on a tutor that grades code
-            and learns from the results.
+            graduation simulator with Scale AI, and I&apos;m now building Thermal Trace, an AI platform that
+            tracks how long food stays fresh across the cold chain.
           </p>
           <p>
-            Outside of class I run events for the university&apos;s AI organization and work as a
-            student assistant on QU&apos;s IT task force.
+            Outside of class I help organize events for the university&apos;s AI organization, and I&apos;m
+            on the events and tech teams at ACM QU.
           </p>
         </div>
         <dl className="about-panel" aria-label="Quick facts">

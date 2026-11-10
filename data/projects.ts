@@ -52,13 +52,13 @@ export const featuredProject: Project = {
   impact:
     "Follows a product from the farm through trucks, cold rooms, and shops, and warns operators while there is still time to do something about it.",
   highlights: [
-    "Wrote the shelf-life model: an Arrhenius model that turns a load's temperature history into how much safe life it has left.",
-    "Each product has its own safe temperature range, so a load is judged against the limits for what it actually holds.",
+    "Led development in a 5-person team and built the shelf-life model: an Arrhenius model that turns a load's temperature history into its remaining safe life.",
+    "Built around one rule: deterministic math owns every number, every value carries its provenance, and the LLM only explains.",
     "Won the Open Innovation Award.",
   ],
   metrics: [
     { value: "4", label: "cold-chain stages" },
-    { value: "Per-product", label: "temperature limits" },
+    { value: "5", label: "person team" },
     { value: "GCC", label: "market focus" },
   ],
 };
@@ -71,29 +71,29 @@ export const projects: Project[] = [
     glyph: "route",
     accent: "#f97316",
     description:
-      "School bus platform for Qatar and the GCC. It plans the routes, shows where each bus is on a live map, and gives parents an ETA.",
-    stack: ["Next.js", "TypeScript", "Supabase", "PostGIS", "Edge Functions", "Mapbox", "Expo", "K-means"],
-    status: "Live Site",
-    year: "2025 - 2026",
+      "School bus platform for Qatar schools. It plans the routes, shows where each bus is on a live map, and gives parents an ETA. I stopped it in September 2026, when the Ministry of Education rolled out its own national attendance system, which would have left the product with a single feature.",
+    stack: ["Next.js", "TypeScript", "Expo", "Supabase", "PostGIS", "Mapbox", "K-Means"],
+    status: "Wound down Sep 2026",
+    year: "2026",
     github: "https://github.com/najeeb101/RouteyAI",
     live: "https://routeyai.vercel.app",
     role: "Founder, sole engineer, and lead developer",
     impact:
-      "I built all of it: the route engine (K-means to group stops, then nearest-neighbour and cheapest-insertion ordering on Mapbox driving times), the database and its access rules, the API, and the apps for admins, drivers, and parents.",
+      "I built all of it solo: the route engine (K-means to group stops, nearest-neighbour and cheapest-insertion routing on Mapbox driving times), the database and its access rules, and the web and mobile apps for admins, drivers, and parents.",
     metrics: [
       { value: "4", label: "user roles" },
       { value: "Live", label: "GPS tracking" },
     ],
   },
   {
-    name: "Cohort Simulator",
+    name: "CS Intake Planner",
     category: "Web Apps",
     tagline: "Who graduates on time, and why not",
     glyph: "flow",
     accent: "#84cc16",
     description:
-      "A simulation of Qatar University CS students moving through the degree. It runs many simulated cohorts to show which prerequisites and full sections push graduation back.",
-    stack: ["Python", "Next.js", "React", "TypeScript", "Tailwind CSS", "Simulation"],
+      "Built during the Scale AI internship through Qatar University. An agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan. It shows which prerequisites and full sections push graduation back, and recommends the largest intake within the department's limits, with 95% uncertainty bounds.",
+    stack: ["Python", "FastAPI", "Next.js", "React", "TypeScript", "Tailwind CSS", "Ollama", "Simulation"],
     status: "Research Tool",
     year: "2026",
     github: "https://github.com/najeeb101/Single-Cohort-Flow-Simulator",
@@ -114,17 +114,17 @@ export const projects: Project[] = [
     accent: "#eab308",
     description:
       "Paste a YouTube lecture and get a transcript, organised notes you can export, and a chat that answers questions about that lecture only.",
-    stack: ["FastAPI", "Next.js", "TypeScript", "Supabase", "faster-whisper", "Groq", "OpenAI"],
+    stack: ["FastAPI", "Next.js", "TypeScript", "Supabase", "faster-whisper", "Groq", "OpenAI", "Ollama", "Docker"],
     status: "AI Product",
-    year: "2026",
+    year: "Mar - Oct 2026",
     github: "https://github.com/najeeb101/VideoNoteExtractor",
     live: "#",
     role: "Backend pipeline, authenticated API, frontend dashboard, and notes chat",
     impact:
-      "A long lecture becomes notes you can read quickly and search later.",
+      "A long lecture becomes notes you can read quickly and search later. I tested it end to end on 5 lecture videos from 3 to 30 minutes, and all of them processed successfully.",
     metrics: [
       { value: "3", label: "pipeline stages" },
-      { value: "2", label: "LLM providers" },
+      { value: "3", label: "LLM providers" },
     ],
   },
   {
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     ],
     metrics: [
       { value: "3", label: "questions a day" },
-      { value: "20", label: "puzzles written" },
+      { value: "40", label: "days of puzzles" },
     ],
   },
   {
