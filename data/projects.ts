@@ -65,6 +65,26 @@ export const featuredProject: Project = {
 
 export const projects: Project[] = [
   {
+    name: "RouteyAI",
+    category: "AI Products",
+    tagline: "School buses you can actually track",
+    glyph: "route",
+    accent: "#f97316",
+    description:
+      "School bus platform for Qatar schools. It plans the routes, shows where each bus is on a live map, and gives parents an ETA.",
+    stack: ["Next.js", "TypeScript", "Expo", "Supabase", "PostGIS", "Mapbox", "K-Means"],
+    status: "Built solo, Mar to Sep 2026",
+    year: "2026",
+    github: "https://github.com/najeeb101/RouteyAI",
+    live: "https://routeyai.vercel.app",
+    role: "Founder, sole engineer, and lead developer",
+    impact:
+      "I built all of it solo: the route engine (K-means to group stops, nearest-neighbour and cheapest-insertion routing on Mapbox driving times), the database and its access rules, and the web and mobile apps for admins, drivers, and parents.",
+    metrics: [
+      { value: "4", label: "user roles" },
+      { value: "Live", label: "GPS tracking" },
+    ],
+  },  {
     name: "CodeTutor",
     category: "AI Products",
     tagline: "Grades code, tutors, and tests the AI",
@@ -90,27 +110,7 @@ export const projects: Project[] = [
       { value: "8", label: "weeks, all done" },
     ],
   },
-  {
-    name: "RouteyAI",
-    category: "AI Products",
-    tagline: "School buses you can actually track",
-    glyph: "route",
-    accent: "#f97316",
-    description:
-      "School bus platform for Qatar schools. It plans the routes, shows where each bus is on a live map, and gives parents an ETA. I stopped it in September 2026, when the Ministry of Education rolled out its own national attendance system, which would have left the product with a single feature.",
-    stack: ["Next.js", "TypeScript", "Expo", "Supabase", "PostGIS", "Mapbox", "K-Means"],
-    status: "Wound down Sep 2026",
-    year: "2026",
-    github: "https://github.com/najeeb101/RouteyAI",
-    live: "https://routeyai.vercel.app",
-    role: "Founder, sole engineer, and lead developer",
-    impact:
-      "I built all of it solo: the route engine (K-means to group stops, nearest-neighbour and cheapest-insertion routing on Mapbox driving times), the database and its access rules, and the web and mobile apps for admins, drivers, and parents.",
-    metrics: [
-      { value: "4", label: "user roles" },
-      { value: "Live", label: "GPS tracking" },
-    ],
-  },
+
   {
     name: "CS Intake Planner",
     category: "Web Apps",
