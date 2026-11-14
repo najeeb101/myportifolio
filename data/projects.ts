@@ -123,7 +123,7 @@ export const projects: Project[] = [
     status: "Research Tool",
     year: "2026",
     github: "https://github.com/najeeb101/Single-Cohort-Flow-Simulator",
-    live: "https://scfs-frontend.onrender.com",
+    live: "https://cs-intake-planner.onrender.com",
     role: "Simulation model, Scenario Builder, Plan Builder, and dashboard workflow",
     impact:
       "The department can try a change, like opening another section or moving a prerequisite, and see the effect on graduation before doing it for real.",
@@ -187,11 +187,11 @@ export const projects: Project[] = [
     accent: "#3b82f6",
     description:
       "Upload a contract as TXT, PDF, or DOCX. It pulls out the text, writes a review, and lets you ask questions about that one document.",
-    stack: ["React", "TypeScript", "Vite", "Supabase", "Gemini", "pdfjs", "mammoth"],
+    stack: ["React", "TypeScript", "Vite", "Supabase", "Groq", "pdfjs", "mammoth"],
     status: "Started at AIX Hackathon 2025",
     year: "2025 - Present",
     github: "https://github.com/najeeb101/Naja7-AI",
-    live: "#",
+    live: "https://naja7-ai.vercel.app",
     role: "Team member at the hackathon, then rebuilt the demo myself",
     impact:
       "Flags clauses that look risky, lists the key terms, and keeps each visitor's documents separate with row-level security. I plan to keep building it.",
