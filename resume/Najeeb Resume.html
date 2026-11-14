@@ -99,6 +99,15 @@
   </ul>
 </div>
 <div class="entry">
+  <div class="row"><span class="title">RouteyAI, Founder &amp; Lead Developer</span><span class="sub">Mar 2026 – Sep 2026</span></div>
+  <div class="row sub"><span>Multi-tenant school bus routing and live tracking platform for Qatar schools (Next.js, Expo, Supabase/PostGIS, Mapbox)</span><span>Doha, Qatar</span></div>
+  <ul>
+    <li>Built it solo: a four-role platform with web and mobile apps for admins, drivers, and parents, plus push notifications for boarding, drop-off, and absences.</li>
+    <li>Designed the route planner: K-means clustering under seat capacity, nearest-neighbour stop ordering on real Mapbox driving times, and cheapest-insertion updates that only propose a re-plan when it is clearly shorter.</li>
+    <li>Built live GPS tracking: driver phones stream bus location over Supabase Realtime so parents see the bus and its ETA during a run; isolated each school&#39;s data with row-level security and role-checked APIs.</li>
+  </ul>
+</div>
+<div class="entry">
   <div class="row"><span class="title">CodeTutor, Solo Developer</span><span class="sub">Sep 2026 – Present</span></div>
   <div class="row sub"><span>AI coding tutor, auto-grader, and eval lab for intro CS (FastAPI, Postgres/pgvector, Next.js, Docker)</span><span>Doha, Qatar</span></div>
   <ul>
@@ -112,14 +121,6 @@
   <ul>
     <li>Built an AI pipeline that turns lecture videos into timestamped notes: yt-dlp download, local faster-whisper transcription, chunking, and map-reduce LLM summarization with provider fallback across Groq, OpenAI, and local Ollama, plus optional slide OCR.</li>
     <li>Wrapped it in an authenticated FastAPI service (Supabase auth, row-level security, free-tier quotas of 3 videos/month, live progress streaming) with a Next.js frontend (timestamps, export, "chat with your notes"), containerized with Docker; tested on 5 lecture videos from 3 to 30 minutes, all processed successfully.</li>
-  </ul>
-</div>
-<div class="entry">
-  <div class="row"><span class="title">RouteyAI, Founder &amp; Lead Developer</span><span class="sub">Mar 2026 – Sep 2026</span></div>
-  <div class="row sub"><span>School bus route planning and live tracking for Qatar schools</span><span>Doha, Qatar</span></div>
-  <ul>
-    <li>Built solo: K-means clustering plus nearest-neighbour and cheapest-insertion routing on Mapbox driving times, and web and mobile apps for admins, drivers, and parents (Next.js, Expo, Supabase/PostGIS).</li>
-    <li>Wound down in Sep 2026 after the Ministry of Education launched its own national attendance system.</li>
   </ul>
 </div>
 <p><b>Other Projects:</b> Naja7 AI, an AI contract review demo where users upload a contract, get a risk review, and ask questions about it (React, Supabase, Groq; <a href="https://naja7-ai.vercel.app">naja7-ai.vercel.app</a>).</p>
