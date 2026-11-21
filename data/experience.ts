@@ -9,6 +9,18 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
+    role: "Industry Partnership Intern",
+    company: "Scale AI via Qatar University",
+    period: "Jun 2026 - Aug 2026",
+    location: "Doha, Qatar",
+    highlights: [
+      "A summer internship with Scale AI, through Qatar University's industry partnership program.",
+      "I built the CS Intake Planner for the head of department, to help decide how many students to admit without running short of seats. It is an agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan, to show which prerequisites and full sections delay graduation.",
+      "It recommends the largest intake that stays within the department's limits, with 95% uncertainty bounds, and comes with a Scenario Builder, a Plan Builder, and a dashboard so the head of department can test a change before making it.",
+    ],
+    stack: ["Python", "FastAPI", "Monte Carlo", "Agent-Based Simulation", "Next.js", "TypeScript", "Ollama"],
+  },
+  {
     role: "AI and Automation Intern",
     company: "Silatha",
     period: "Oct 2025 - Jan 2026",
@@ -20,18 +32,6 @@ export const experience: ExperienceItem[] = [
       "I wrote a backend integration strategy so the team could safely build on an inherited vendor codebase.",
     ],
     stack: ["Python", "n8n", "OpenAI API", "API Integration", "Monitoring"],
-  },
-  {
-    role: "Industry Partnership Intern",
-    company: "Scale AI via Qatar University",
-    period: "Jun 2026 - Aug 2026",
-    location: "Doha, Qatar",
-    highlights: [
-      "A summer internship with Scale AI, through Qatar University's industry partnership program.",
-      "I built the CS Intake Planner for the head of department, to help decide how many students to admit without running short of seats. It is an agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan, to show which prerequisites and full sections delay graduation.",
-      "It recommends the largest intake that stays within the department's limits, with 95% uncertainty bounds, and comes with a Scenario Builder, a Plan Builder, and a dashboard so the head of department can test a change before making it.",
-    ],
-    stack: ["Python", "FastAPI", "Monte Carlo", "Agent-Based Simulation", "Next.js", "TypeScript", "Ollama"],
   },
   {
     role: "Research Intern - Aquaponics AI",
