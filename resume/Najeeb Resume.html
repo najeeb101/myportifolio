@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -14,7 +14,7 @@
   body {
     font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
     font-size: 9.5pt;
-    line-height: 1.08;
+    line-height: 1.05;
     color: #111;
   }
   a { color: inherit; text-decoration: none; }
@@ -39,7 +39,7 @@
   .title { font-weight: 700; }
   .sub { font-style: italic; }
   ul { margin: 1pt 0 0; padding-left: 17pt; }
-  li { margin: 0.6pt 0; padding-left: 2pt; }
+  li { margin: 0.4pt 0; padding-left: 2pt; }
   p { margin: 1.5pt 0 0; }
   .skills p { margin: 0.8pt 0 0; }
   .tag { margin: 1pt 0 0; text-align: center; font-size: 10pt; font-weight: 700; color: #1f3864; letter-spacing: 0.3pt; }
@@ -68,16 +68,18 @@
   <div class="row"><span class="title">Industry Partnership Intern, Scale AI</span><span class="sub">Jun 2026 – Aug 2026</span></div>
   <div class="row sub"><span>Qatar University Industry Partnership Program</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Engineered the CS Intake Planner end to end: an agent-based Monte Carlo simulation of QU CS students moving through the real 41-course study plan (prerequisites, seat limits, pass/fail, dropout), built in Python and FastAPI.</li>
-    <li>Turned the simulation into a decision tool that recommends the largest intake within department-set limits, with 95% uncertainty bounds, delivered as a Next.js dashboard for the Head of Department, with a local-LLM advisor (Ollama) that explains results.</li>
+    <li>Built the CS Intake Planner for QU&#39;s Head of Department to decide how many students to admit without causing seat shortages: an agent-based Monte Carlo simulation of students moving through the real 41-course study plan, in Python and FastAPI.</li>
+    <li>Turned the simulation into a decision tool that recommends the largest intake within department-set limits, with 95% uncertainty bounds, delivered as a Next.js dashboard with a local-LLM advisor (Ollama) that explains results.</li>
+    <li>Measured seat-shortage harm by re-running the same students with unlimited seats, kept the code maintainable with a layered architecture enforced by 296 pytest tests, and deployed a public read-only demo on Render.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">AI and Automation Intern</span><span class="sub">Oct 2025 – Jan 2026</span></div>
   <div class="row sub"><span>Silatha (Remote)</span><span>Amsterdam, Netherlands</span></div>
   <ul>
-    <li>Designed and deployed 3 production AI automation workflows (n8n, Python, OpenAI API) with API integrations, monitoring, and error handling, replacing manual processes.</li>
-    <li>Built and deployed a 6-level educational word search game (React, Firebase) with cross-device progress sync, played by ~200 players.</li>
+    <li>Replaced manual processes at Silatha with 3 production AI automation workflows (n8n, Python, OpenAI API), including API integrations, monitoring, and error handling.</li>
+    <li>Built and deployed a 6-level educational word search game (React, Firebase) with progress sync, timers, and hints; ~200 players.</li>
+    <li>Wrote a backend integration strategy so the team could safely build on an inherited vendor codebase.</li>
   </ul>
 </div>
 <div class="entry">
@@ -93,7 +95,7 @@
   <div class="row"><span class="title">Thermal Trace, Co-Founder &amp; Lead Developer | Open Innovation Award, UN Reboot the Earth Hackathon</span><span class="sub">Sep 2026 – Present</span></div>
   <div class="row sub"><span>Cold-chain decision platform for Qatar/GCC (FastAPI, MQTT, PostgreSQL, Redis, React)</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Led development in a 5-person team; built the Arrhenius shelf-life model that turns temperature history into remaining safe life.</li>
+    <li>Lead a 5-person team helping cold-chain operators see how much safe shelf life food has left; built the Arrhenius shelf-life model.</li>
     <li>Enforced a "deterministic math owns every number" architecture: every value carries provenance, and the LLM only explains.</li>
     <li>Designed the end-to-end system: truck telemetry over MQTT into FastAPI, with ML spoilage-risk estimates and a cold-store optimizer.</li>
   </ul>
@@ -102,7 +104,7 @@
   <div class="row"><span class="title">RouteyAI, Founder &amp; Lead Developer</span><span class="sub">Mar 2026 – Sep 2026</span></div>
   <div class="row sub"><span>Multi-tenant school bus routing and live tracking platform for Qatar schools (Next.js, Expo, Supabase/PostGIS, Mapbox)</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built it solo: a four-role platform with web and mobile apps for admins, drivers, and parents, plus push notifications for boarding, drop-off, and absences.</li>
+    <li>Built it solo to replace manual bus planning: a four-role platform with web and mobile apps for admins, drivers, and parents, plus push notifications for boarding, drop-off, and absences.</li>
     <li>Designed the route planner: K-means clustering under seat capacity, nearest-neighbour stop ordering on real Mapbox driving times, and cheapest-insertion updates that only propose a re-plan when it is clearly shorter.</li>
     <li>Built live GPS tracking: driver phones stream bus location over Supabase Realtime so parents see the bus and its ETA during a run; isolated each school&#39;s data with row-level security and role-checked APIs.</li>
   </ul>
@@ -112,15 +114,15 @@
   <div class="row sub"><span>AI coding tutor, auto-grader, and eval lab for intro CS (FastAPI, Postgres/pgvector, Next.js, Docker)</span><span>Doha, Qatar</span></div>
   <ul>
     <li>Built a sandboxed auto-grader and a 33-problem Python bank with hidden tests, validated against 97 known-wrong solutions; the same grader scores student code, evaluates LLMs (Qwen2.5-Coder 1.5B and 7B, pass@k with intervals), and is the reward for GRPO training.</li>
-    <li>Built a local-LLM hint tutor with hybrid retrieval (right note section in the top 3 for 40 of 40 test questions) and a guardrail against leaking solutions; reported results honestly, including a GRPO gain within noise.</li>
+    <li>Built a local-LLM hint tutor, used by 10+ classmates, that helps without handing over the answer: hybrid retrieval (right note section in the top 3 for 40 of 40 test questions) and a guardrail against leaking solutions.</li>
   </ul>
 </div>
 <div class="entry">
   <div class="row"><span class="title">Lectura, Solo Developer</span><span class="sub">Mar 2026 – Oct 2026</span></div>
   <div class="row sub"><span>AI study tool that turns lecture videos into timestamped notes (FastAPI, faster-whisper, Next.js, Supabase, Docker)</span><span>Doha, Qatar</span></div>
   <ul>
-    <li>Built an AI pipeline that turns lecture videos into timestamped notes: yt-dlp download, local faster-whisper transcription, chunking, and map-reduce LLM summarization with provider fallback across Groq, OpenAI, and local Ollama, plus optional slide OCR.</li>
-    <li>Wrapped it in an authenticated FastAPI service (Supabase auth, row-level security, free-tier quotas of 3 videos/month, live progress streaming) with a Next.js frontend (timestamps, export, "chat with your notes"), containerized with Docker; tested on 5 lecture videos from 3 to 30 minutes, all processed successfully.</li>
+    <li>Built an AI pipeline, used by 10+ classmates, that saves students from rewatching lectures: local faster-whisper transcription and map-reduce LLM summaries with fallback across Groq, OpenAI, and Ollama, plus slide OCR.</li>
+    <li>Shipped it as an authenticated FastAPI service (Supabase auth, row-level security, 3 free videos/month) with a Next.js frontend and "chat with your notes", in Docker; tested on 5 lectures (3 to 30 min), all processed successfully.</li>
   </ul>
 </div>
 <p><b>Other Projects:</b> Naja7 AI, an AI contract review demo where users upload a contract, get a risk review, and ask questions about it (React, Supabase, Groq; <a href="https://naja7-ai.vercel.app">naja7-ai.vercel.app</a>).</p>
