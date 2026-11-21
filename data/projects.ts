@@ -71,7 +71,7 @@ export const projects: Project[] = [
     glyph: "route",
     accent: "#f97316",
     description:
-      "School bus platform for Qatar schools. It plans the routes, shows where each bus is on a live map, and gives parents an ETA.",
+      "School bus platform for Qatar schools that replaces planning routes by hand. It plans the routes, shows where each bus is on a live map, and gives parents an ETA.",
     stack: ["Next.js", "TypeScript", "Expo", "Supabase", "PostGIS", "Mapbox", "K-Means"],
     status: "Built solo, Mar to Sep 2026",
     year: "2026",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     glyph: "tutor",
     accent: "#0ea5e9",
     description:
-      "A practice platform for intro Python with instant auto-grading and an AI tutor that gives hints, not answers. The same grader also scores AI models and is the reward for reinforcement-learning training of a small code model.",
+      "A practice platform for intro Python with instant auto-grading and an AI tutor that gives hints, not answers. 10+ of my classmates have used it. The same grader also scores AI models and is the reward for reinforcement-learning training of a small code model.",
     stack: ["Python", "FastAPI", "Next.js", "Postgres", "pgvector", "Docker", "Ollama", "GRPO"],
     status: "Built and measured",
     year: "2026",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     ],
     metrics: [
       { value: "33", label: "problems" },
-      { value: "8", label: "weeks, all done" },
+      { value: "10+", label: "classmates used it" },
     ],
   },
 
@@ -147,9 +147,9 @@ export const projects: Project[] = [
     live: "#",
     role: "Backend pipeline, authenticated API, frontend dashboard, and notes chat",
     impact:
-      "A long lecture becomes notes you can read quickly and search later. I tested it end to end on 5 lecture videos from 3 to 30 minutes, and all of them processed successfully.",
+      "A long lecture becomes notes you can read quickly and search later, so you don't have to rewatch it. 10+ of my classmates have used it. I tested it end to end on 5 lecture videos from 3 to 30 minutes, and all of them processed successfully.",
     metrics: [
-      { value: "3", label: "pipeline stages" },
+      { value: "10+", label: "classmates used it" },
       { value: "3", label: "LLM providers" },
     ],
   },
