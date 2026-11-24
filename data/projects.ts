@@ -46,7 +46,7 @@ export const featuredProject: Project = {
   stack: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "Redis", "MQTT", "Leaflet", "Docker", "Predictive ML"],
   status: "Open Innovation Award",
   year: "2026 - Present",
-  github: "https://github.com/Isl-d/Reboot-The-Earth-Cold-Chain-Logistics",
+  github: "",
   live: "https://thermal-trace-gilt.vercel.app",
   role: "Co-Founder & Lead Developer",
   impact:
